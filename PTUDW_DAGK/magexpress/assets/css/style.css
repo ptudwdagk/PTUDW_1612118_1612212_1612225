@@ -184,7 +184,7 @@ span.meta_more:before{content:" "; font-family:FontAwesome; font-style:normal
 .breadcrumb > li+li:before{color:#fff}
 .breadcrumb > .active{color:#fff}
 .single_page_area > h2{ color:#798992; padding:20px 10px; line-height:40px}
-.single_page_content{float:left; display:inline; width:100%}
+.single_page_content{float:left; display:inline; width:100%; padding-left: 10px}
 .post_commentbox{border-bottom:1px dotted #dedede; display:inline; float:left; margin-bottom:30px; padding-bottom:2px; padding-left:5px; width:100%}
 .post_commentbox a{margin-right:5px; font-size:11px}
 .post_commentbox a > i{margin-right:5px}
