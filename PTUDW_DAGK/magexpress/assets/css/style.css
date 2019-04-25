@@ -13,12 +13,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 body{background-color:#fff; color:#333; overflow-x:hidden !important}
 ul{padding:0; margin:0; list-style:none}
 a{text-decoration:none; color:#798992}
-a:hover{color:#646464; text-decoration:none}
+a:hover{color:blue; text-decoration:none}
+
 a:focus{outline:none; text-decoration:none}
 h2{font-family:'arial',sans-serif; line-height:23px}
 img{border:none}
 img:hover{opacity:0.75}
 
+.tttk{
+        margin-bottom: -1px;
+    line-height: 1.5em;
+    display: inline-block;
+    border-bottom: solid 1px #85c341;
+}
+.as{
+        display: inline-block;
+    height: 25px;
+    line-height: 25px;
+  
+position: relative;
+}
+.tk{
+       text-align: center;margin-left: 20px;
+}
+.tieude{
+    width: 100%; height: 50px; padding-left: 10px;
+}
 .dangnhap{
 	color: #fff;
     background-color: #337ab7;
@@ -48,13 +68,13 @@ img:hover{opacity:0.75}
 .blue_btn:hover{background-color:#39c8f7; color:#fff}
 .transition{-webkit-transition:all 0.5s; -moz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 #header{float:left; display:inline; width:100%}
-.header_top{ display:inline; float:left; width:100%;  border-bottom:1px solid #e6e6e6; height: 40px;margin-top: 10px}
+.header_top{ display:inline; float:left; width:100%;  border-bottom:1px solid #e6e6e6; height: 40px;margin-top: 10px; }
 .header_top_left{ float:left; display:inline; width:70%}
 .top_nav{ text-align:left}
 .top_nav li{ display:inline-block}
 .top_nav li a{ color:#798992; display:inline-block; font-family:"arial",sans-serif; font-size:12px; padding:8px 12px; text-transform:uppercase; -webkit-transition:all 0.5; -o-transition:all 0.5; transition:all 0.5}
 .top_nav li a:hover{ color:#FFA500; text-decoration:none; outline:none}
-.header_top_right{ float:right; display:inline; width:30%; text-align:right; }
+.header_top_right{ display:inline; width:30%; text-align:right; }
 .search_form{ padding:3px 0 0}
 .search_form input[type="text"]{ background:none repeat scroll 0 0 #fff; border:medium none; color:#afafaf; display:inline-block; line-height:27px; margin:0; max-height:31px; padding:0 0 0 15px; width:180px}
 .search_form input[type="submit"]{ background:url("images/icon-search.png") no-repeat scroll center 5px rgba(0,0,0,0); height:27px; line-height:27px; width:30px; border:none}
