@@ -12,6 +12,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<style type="text/css">
+		tr:nth-child(even) {background: #e5e5e5}
+        tr:nth-child(odd) {background: #FFF}
+	</style>
 </head>
 <body>
 	<div id="preloader">
@@ -116,92 +120,76 @@
 			<option value="DuLichTheGioi">Du Lịch Thế Giới</option>
 			<option value="KhoiNghiep">Khởi nghiệp</option>
 			<option value="BatDongSan">Bất động sản</option>
-
-
 		</select>
-		 <div class="single_bottom_rightbar">
-            <ul role="tablist" class="nav nav-tabs custom-tabs">
-              <li class="active" role="presentation"><a data-toggle="tab" role="tab" aria-controls="home" href="#mostPopular">Các bài viết chờ phê duyệt</a></li>
-              <li  role="presentation"><a data-toggle="tab" role="tab" aria-controls="messages" href="#mostPopular">Các bài viết phê duyệt trong ngày</a></li>
-            </ul>
-            <div class="tab-content">
-              <div id="mostPopular" class="tab-pane fade in active" role="tabpanel">
-                <ul class="small_catg popular_catg wow fadeInDown">
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                        <div class="Date">2/2/2018 9:00:18 AM</div>
-                        <div class="Tags">
-                          <strong>Tags: </strong>
-                          <a href="pages/single.html">Bai Viet 1</a>
-                          ,
-                          <a href="pages/single.html">Bai Viet 2</a>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div id="recentComent" class="tab-pane fade" role="tabpanel">
-                <ul class="small_catg popular_catg">
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="images/112x112.jpg" alt=""></a>
-                      <div class="media-body">
-                        <h4 class="media-heading"><a href="#">Duis condimentum nunc pretium lobortis </a></h4>
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra </p>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-		<script src="assets/js/jquery.min.js"></script> 
-		<script src="assets/js/bootstrap.min.js"></script> 
-		<script src="assets/js/wow.min.js"></script> 
-		<script src="assets/js/slick.min.js"></script> 
-		<script src="assets/js/custom.js"></script>
-	</body>
-	</html>
+
+		<table border="1" class="table" style="margin-top: 20px">
+			<tr style="background: #6495ED">
+				<th width="600px">Tên bài</th>
+				<th>Người viết</th>
+				<th>Chuyên mục</th>
+				<th>Ngày gửi</th>
+				<th width="110px">Phê duyệt</th>
+			</tr>
+			<tr>
+				<td><a  href="" style="color: blue"> 5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ </a></td>
+				<td>Nguyễn Văn A</td>
+				<td>Pháp luật</td>
+				<td>20/04/2019</td>
+				<td >
+					<button><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+					<button style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ </a> </td>
+				<td>Nguyễn Văn A</td>
+				<td>Pháp luật</td>
+				<td>20/04/2019</td>
+				<td >
+					<button><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+					<button style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
+				<td>Nguyễn Văn A</td>
+				<td>Pháp luật</td>
+				<td>20/04/2019</td>
+				<td >
+					<button><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+					<button style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
+				<td>Nguyễn Văn A</td>
+				<td>Pháp luật</td>
+				<td>20/04/2019</td>
+				<td >
+					<button><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+					<button style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+			<tr>
+				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
+				<td>Nguyễn Văn A</td>
+				<td>Pháp luật</td>
+				<td>20/04/2019</td>
+				<td >
+					<button><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+					<button style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+		</table>
+
+
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script> 
+	<script src="assets/js/bootstrap.min.js"></script> 
+	<script src="assets/js/wow.min.js"></script> 
+	<script src="assets/js/slick.min.js"></script> 
+	<script src="assets/js/custom.js"></script>
+</body>
+</html>
