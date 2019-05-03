@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 <link rel="stylesheet" type="text/css" href="register.css">
-<link rel="stylesheet" type="text/css" href="DangNhap.css">	
+	
 </head>
 <body>
 <div id="preloader">
@@ -106,38 +106,100 @@
       </div>
     </nav>
   </div>	
-  <button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
- <button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-  <div  class="modal fade" id="khongduyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-	<div   class="modal-dialog" role="document">
-	  <div  style="background:  #FFA500  " class="modal-content">
-		<div>
-		  
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<div class="login-page">
-				<div class="form">
-				 
-				  <form class="login-form">
-					<input type="text" placeholder="username"/>
-					<input type="password" placeholder="password"/>
-					<button>login</button>
-					<p class="message">Not registered? <a href="#">Create an account</a></p>
-				  </form>
-				</div>
-			  </div>
-		</div>
-		
-	  </div>
-	</div>
-  </div>
-  
-  
+  <div>
+  <form action="" class="register">
+    <br>
+    <br>
+    <br>
+    <p style="margin-top: 10px">Đăng kí tài khoản </p>
+    <fieldset class="row1">
+        <legend>Thông tin tài khoản
+        </legend>
+        <p>
+            <label>Email *
+            </label>
+            <input style="width: 220px" type="text"/>
+          
+        </p>
+        <p>
+            <label>Mật khẩu *
+            </label>
+            <input style="width: 220px" type="text"/>
+        </p>
+        <p>
+            <label>Nhập lại mật khẩu*
+            </label>
+            <input style="width: 220px" type="text"/>
+           
+            </label>
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <legend>Thông tin cá nhân
+        </legend>
+        <p>
+            <label>Tên *
+            </label>
+            <input type="text" class="long"/>
+        </p>
+        <p>
+            <label>Điện thoại *
+            </label>
+            <input type="text" maxlength="11"/>
+        </p>
+        <p>
+            <label>Địa chỉ 
+            </label>
+            <input type="text" class="long"/>
+        </p>
+      
+        <p>
+            <label>Giới tính *</label>
+            <input type="radio" name="gender" value="radio"/>
+            <label class="gender">Nam</label>
+            <input type="radio" name="gender" value="radio"/>
+            <label class="gender" >Nữ</label>
+        </p>
+        <p>
+            <label>Ngày sinh *
+            </label>
+            <select  class="day"  style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1;i<=31;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+              </script>
+            </select>
+            <select   style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1;i<=12;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+              </script>
+              </select>
+            <select   style="border-radius: 4px; width: 137px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1950;i<=2019;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+							</script>
+						</select>
 
+        </p>
+     
+      </fieldset> 
+    </div>
+    <div><button style="margin-top: 20px; margin-left: 450px"  class="button">Register &raquo;</button></div>
 </form>
+  
+  
+  
 
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/bootstrap.min.js"></script> 
