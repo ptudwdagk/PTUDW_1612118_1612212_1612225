@@ -19,6 +19,9 @@ a:focus{outline:none; text-decoration:none}
 h2{font-family:'arial',sans-serif; line-height:23px}
 img{border:none}
 img:hover{opacity:0.75}
+.th1{
+    text-align: center;
+}
 
 .tttk{
         margin-bottom: -1px;

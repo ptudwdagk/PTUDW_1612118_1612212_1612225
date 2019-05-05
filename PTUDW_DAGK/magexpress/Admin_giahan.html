@@ -170,7 +170,7 @@
 <img class="img-responsive profile-img margin-bottom-20" src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
 
 <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-    <li class="list-group-item active">
+ <li class="list-group-item active">
         <a href="Admin.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
     </li>    
 
@@ -181,9 +181,20 @@
         <a href="Admin_giahan.html"><i class="fa fa-arrows"></i>Gia hạn tài khoản người dùng</a>
     </li>
     <li class="list-group-item">
-        <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công người dùng</a>
+        <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
     </li>
-
+    <li class="list-group-item">
+        <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
+    </li>
+    <li class="list-group-item">
+        <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
+    </li>
+    <li class="list-group-item">
+        <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
+    </li>
+ <li class="list-group-item">
+        <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
+    </li>
     
 </ul>
 <hr>           
@@ -209,36 +220,37 @@
 
                           <table class="table">
   <thead class="thead-dark">
-    <tr>
+    <tr style="background-color: #7092cc; color: white">
       <th scope="col">#</th>
       <th scope="col">Tài Khoản</th>
        <th scope="col">Hiệu Lực</th>
-      <th scope="col"></th>
+      <th scope="col">Gia Hạn</th>
+      
      
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>hoangak1@gmail.com</td>
+      <td><a href="index_docgia_TK.html">hoangak1@gmail.com</a></td>
       <td>6 ngày</td>
-      <td><input type="button" onclick="alert('Gia hạn thành công');" value="Gia Hạn"></td>
-  
+      <td><input type="button" onclick="alert('Tài khoản còn hiệu lực');" value="Gia Hạn"></td>
+     
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>hungtran1@gmail.com</td>
+      <td><a href="index_docgia_TK.html">hungtran1@gmail.com</a> </td>
     <td>7 ngày</td>
-      <td><input type="button" onclick="alert('Gia hạn thành công');" value="Gia Hạn"></td>
-
+    <td><input type="button" onclick="alert('Tài khoản còn hiệu lực');" value="Gia Hạn"></td>
+   
 
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>vietduc1@gmail.com</td>
+      <td><a href="index_docgia_TK.html">vietduc1@gmail.com</a> </td>
         <td><p id="khong">0 ngày</p></td>
       <td><button onclick="changePtext();  alert('Gia hạn thành công');" >Gia Hạn</button></td>
-
+     
     </tr>
 
   </tbody>

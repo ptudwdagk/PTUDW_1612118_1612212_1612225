@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
 <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/demo.css" >
 <!--[if lt IE 9]>
 <script src="assets/js/html5shiv.min.js"></script>
 <script src="assets/js/respond.min.js"></script>
@@ -170,20 +171,31 @@
 <img class="img-responsive profile-img margin-bottom-20" src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
 
 <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-    <li class="list-group-item active">
+   <li class="list-group-item active">
         <a href="Admin.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
     </li>    
 
         <li class="list-group-item ">
             <a href="/mykplus/vi-vn/manage/changepassword"><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
         </li>
-    <li class="list-group-item">
-        <a href="Admin_giahan.html"><i class="fa fa-arrows"></i>Gia hạn tài khoản người dùng</a>
+   <li class="list-group-item">
+        <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
     </li>
     <li class="list-group-item">
         <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
     </li>
-     
+    <li class="list-group-item">
+        <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
+    </li>
+    <li class="list-group-item">
+        <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
+    </li>
+    <li class="list-group-item">
+        <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
+    </li>
+      <li class="list-group-item">
+        <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
+    </li>
     
 </ul>
 <hr>           
@@ -206,6 +218,7 @@
                             <div class="headline"><h2>PHÂN CÔNG CHUYÊN MỤC</h2></div>                           
                             <br>
                             
+                         
 
                           <table class="table">
   <thead class="thead-dark">
@@ -250,6 +263,15 @@
     </tr>
   </tbody>
 </table>
+
+<div >
+
+  
+<div style="display: flex; justify-content: flex-end;"><button   type="button" class="delete-row">Lưu</button></div>
+
+</div>
+
+
 
 
                     </div>
@@ -354,5 +376,25 @@
 <script src="assets/js/wow.min.js"></script> 
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/dangnhap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+         
+            var markup = "<tr ><td class='th1' ><input type='checkbox' name='record'></td><td class='th1' >" + " <button class='glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button></td><td class='th1' >"  + name  
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+              if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
 </body>
 </html>

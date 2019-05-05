@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
 <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/demo.css" >
 <!--[if lt IE 9]>
 <script src="assets/js/html5shiv.min.js"></script>
 <script src="assets/js/respond.min.js"></script>
@@ -192,9 +193,11 @@
     <li class="list-group-item">
         <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
     </li>
-    <li class="list-group-item">
+     <li class="list-group-item">
         <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
     </li>
+     
+    
 </ul>
 <hr>           
 
@@ -212,62 +215,105 @@
 
 
 
-                        <div id="profile" class="profile-edit tab-pane fade in active" style="margin: 10px 0 10px;">
-                            <div  class="headline"><h2>Thông tin tài khoản</h2></div>                           
+                        <div id="profile" class="profile-edit tab-pane fade in active" >
+                            <div class="headline"><h2>QUẢN LÝ BÀI VIẾT</h2></div>                           
                             <br>
-                            <dl class="dl-horizontal">
-                                <dt><strong>Email </strong></dt>
-                                <dd>
-                                    
-                                    <span class="lbl-data">LeVietDuc@gmail.com</span>
+                            
 
-                                       
-                                </dd>                                
-                                <hr>
-                                <dt><strong>Mật khẩu </strong></dt>
-                                <dd>
-                                    ***************
-                                    
-                                       
-                                </dd>
-                                <hr>
-                                <dt><strong>Điện thoại </strong></dt>
-                                <dd>
-                                    <span class="lbl-data">0964883186</span>                                    
-                                    
-                                </dd>
-                                <dt></dt>
-                              
-                                <hr>
-                                <dt><strong>Họ và tên</strong></dt>
-                                <dd>
+                         <form>
+        <input type="text" id="name" placeholder="Bài Viết">
+        <!--<input type="text" id="email" placeholder="Email Address">-->
+      <input type="button" class="add-row" value="Thêm bài viết">
+    </form>
+   <!-- <table>
+        <thead>
+            <tr>
+              <th>Chọn</th>
+              <th>Chinh sua</th>
+                <th>Danh Muc</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td><input type="checkbox" name="record"></td>
+                <td ><button name="chinhsua">chinh sua</button></td> 
+                <td>Peter Parker</td>
+                
+            </tr>
+        </tbody>
+    </table>
+-->
+ <table border="1px" cellspacing="0px" width="100%"  >
+                              <tr style="height:  40px; background-color: #7092cc; color: white">
+      
+        <th class="th1"  >Chọn</th>
+        <th class="th1" >Sửa bài viết</th>
+        <th class="th1" >Danh sách bài viết</th>
+       
+    </tr>
+    <tr style="height: 30px">
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+          <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-ok" data-toggle="modal" data-target="#edit1"></button> </th>
+        <th class="th1" rowspan="2"><a href="pages/KN_10PhutMoiNgay.html" target="_blank">10 phút mỗi ngày</a></th>
+        
+    </tr>
+    <tr>
+        
+   
+    </tr>
 
+      <tr style="height: 30px">
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+         <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-ok" data-toggle="modal" data-target="#edit1"></button> </th>
+           <th class="th1" rowspan="2"><a href="pages/KN_tyPhuTraXanh.html" target="_blank">Tỷ phú trà xanh</a></th>
+        
+    </tr>
+    <tr>
+        
+   
+    </tr>
+<tr  style="height: 30px">
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+          <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-ok" data-toggle="modal" data-target="#edit1"></button> </th>
+           <th class="th1" rowspan="2"><a href="pages/KN_trieuPhuNuoiDe.html" target="_blank">Triệu phú nuôi dê</a></th>
+    
+    </tr>
+    <tr>
 
-                                    <span class="lbl-data">NGUYỄN ĐÌNH HOÀNG</span>
-                                    
-                                </dd>
-                                <dt></dt>
-                               
-                              
-                                                             
-                            </dl>
+   
+    </tr >
+<tr  style="height: 30px">
+        <th class="th1"  rowspan="2"><input type="checkbox" name="record"></th>
+            <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-ok" data-toggle="modal" data-target="#edit1"></button></th>
+           <th class="th1" rowspan="2"><a href="pages/KN_KhiNaoKhoiNghiep.html" target="_blank">Khi nào nên khởi nghiệp</a></th>
+      
+    </tr>
+    <tr>
+<!--<button class='
+glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button>-->
+   
+    </tr>
+<tr  style="height: 30px">
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+             <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-ok" onclick="alert('Bài viết đã được đăng');" ></button> </th>
+           <th class="th1" rowspan="2"><a href="pages/KN_capVoChong9x.html" target="_blank">Cặp vợ chồng 9x</a></th>
+     
+    </tr>
+    <tr>
+      
+   
+    </tr>
+</table>
+    <button type="button" class="delete-row">Xóa bài viết</button>
+    
 
-                            <div class="headline"><h2>Thông tin gói kênh</h2></div>
-                            <br />
-
-                            <dl class="dl-horizontal">
-                               
-                                <dt><strong>Trạng thái </strong></dt>
-                                <dd>
-                                    Hoạt động
-                                    <span>
-                                        
-                                    </span>
-                                </dd>
-                                <hr>
-                                
-                        
-                        </div>
 
                     </div>
                 </div>
@@ -366,10 +412,173 @@
     </div>
   </div>
 </footer>
+<div class="modal fade" id="edit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <input type="text" placeholder="Nhập nội dung cần sửa">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Tin tức"></th>
+        <th  colspan="3"><input type="text" placeholder="Tin tức Hồ Chí Minh"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Tin tức Nghệ An"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Ẩm thực"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder="Ẩm thực Việt Nam"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Ẩm thực thế giới"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Du lịch"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder="Du lịch Việt Nam"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Du lịch thế giới"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input  type="text" placeholder="Kinh doanh"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder=" Khởi nghiệp"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Bất động sản"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/bootstrap.min.js"></script> 
 <script src="assets/js/wow.min.js"></script> 
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/dangnhap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+         
+            var markup = "<tr ><td class='th1' ><input type='checkbox' name='record'></td><td class='th1' >" + " <button class='glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button></td><td class='th1' >"  + name  
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+              if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
 </body>
 </html>

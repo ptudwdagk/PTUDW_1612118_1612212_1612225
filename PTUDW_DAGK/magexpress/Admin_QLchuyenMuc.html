@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
 <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/demo.css" >
 <!--[if lt IE 9]>
 <script src="assets/js/html5shiv.min.js"></script>
 <script src="assets/js/respond.min.js"></script>
@@ -170,7 +171,7 @@
 <img class="img-responsive profile-img margin-bottom-20" src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
 
 <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-    <li class="list-group-item active">
+ <li class="list-group-item active">
         <a href="Admin.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
     </li>    
 
@@ -181,7 +182,7 @@
         <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
     </li>
     <li class="list-group-item">
-        <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
+        <a href="Admin_phancong.html"><i class="fa fa-group"></i>Phân công chuyên mục</a>
     </li>
     <li class="list-group-item">
         <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
@@ -192,7 +193,7 @@
     <li class="list-group-item">
         <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
     </li>
-    <li class="list-group-item">
+     <li class="list-group-item">
         <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
     </li>
 </ul>
@@ -212,62 +213,79 @@
 
 
 
-                        <div id="profile" class="profile-edit tab-pane fade in active" style="margin: 10px 0 10px;">
-                            <div  class="headline"><h2>Thông tin tài khoản</h2></div>                           
+                        <div id="profile" class="profile-edit tab-pane fade in active" >
+                            <div class="headline"><h2>QUẢN LÝ CHUYÊN MỤC</h2></div>                           
                             <br>
-                            <dl class="dl-horizontal">
-                                <dt><strong>Email </strong></dt>
-                                <dd>
-                                    
-                                    <span class="lbl-data">LeVietDuc@gmail.com</span>
+                          
+                                          <form>
+        <input type="text" id="name" placeholder="Danh mục">
+        <input type="text" id="name" placeholder="Chuyên mục">
+      <input type="button" class="add-row" value="Thêm">
+    </form>
 
-                                       
-                                </dd>                                
-                                <hr>
-                                <dt><strong>Mật khẩu </strong></dt>
-                                <dd>
-                                    ***************
-                                    
-                                       
-                                </dd>
-                                <hr>
-                                <dt><strong>Điện thoại </strong></dt>
-                                <dd>
-                                    <span class="lbl-data">0964883186</span>                                    
-                                    
-                                </dd>
-                                <dt></dt>
-                              
-                                <hr>
-                                <dt><strong>Họ và tên</strong></dt>
-                                <dd>
+                          <table border="1px" cellspacing="0px" width="100%"  >
+                              <tr style="height:  40px; background-color: #7092cc; color: white">
+      
+        <th class="th1"  >Chọn xóa</th>
+        <th class="th1" >Chỉnh sửa</th>
+        <th class="th1" >Danh mục</th>
+        <th class="th1" >Chuyên mục</th>
+    </tr>
+    <tr >
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+          <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit1"></button>  </th>
+        <th class="th1" rowspan="2">Thể Thao</th>
+        <th class="th1" colspan="3"><a href="pages/BongDa.html">Bóng đá</a></th>
+    </tr>
+    <tr>
+        <th class="th1"><a href="pages/BongChuyen.html">Bóng chuyền</a></th>
+   
+    </tr>
 
-
-                                    <span class="lbl-data">NGUYỄN ĐÌNH HOÀNG</span>
-                                    
-                                </dd>
-                                <dt></dt>
-                               
-                              
-                                                             
-                            </dl>
-
-                            <div class="headline"><h2>Thông tin gói kênh</h2></div>
-                            <br />
-
-                            <dl class="dl-horizontal">
-                               
-                                <dt><strong>Trạng thái </strong></dt>
-                                <dd>
-                                    Hoạt động
-                                    <span>
-                                        
-                                    </span>
-                                </dd>
-                                <hr>
-                                
-                        
-                        </div>
+      <tr>
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+        <th class="th1"  rowspan="2"><button class="
+glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit2"></button>  </th>
+        <th class="th1" rowspan="2">Tin Tức</th>
+        <th class="th1" colspan="3"><a href="pages/TinTucHoChiMinh.html">Tin tức Hồ Chí Minh</a></th>
+    </tr>
+    <tr>
+        <th class="th1"><a href="pages/TinTucNgheAn.html">Tin tức Nghệ An</a></th>
+   
+    </tr>
+<tr>
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+         <th class="th1" rowspan="2"> <button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit3"></button>  </th>
+        <th class="th1" rowspan="2">Ẩm thực</th>
+        <th class="th1" colspan="3"><a href="pages/AmThucVietNam.html">Ẩm thực Việt Nam</a></th>
+    </tr>
+    <tr>
+        <th class="th1"><a href="pages/AmThucTheGioi.html">Ẩm thực thế giới</a></th>
+   
+    </tr >
+<tr>
+        <th class="th1"  rowspan="2"><input type="checkbox" name="record"></th>
+            <th class="th1" rowspan="2"><button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit4"></button> </th>
+        <th class="th1" rowspan="2">Du lịch</th>
+        <th class="th1" colspan="3"><a href="pages/DuLichVietNam.html">Du lịch Việt Nam</a></th>
+    </tr>
+    <tr>
+        <th class="th1"><a href="pages/DuLichTheGioi.html">Du lịch thế giới</a></th>
+   
+    </tr>
+<tr>
+        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
+            <th class="th1" rowspan="2"> <button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit5"></button> </th>
+        <th class="th1" rowspan="2">Kinh doanh</th>
+        <th class="th1" colspan="3"><a href="pages/KhoiNghiep.html">Khởi nghiệp</a></th>
+    </tr>
+    <tr>
+        <th class="th1"><a href="pages/BatDongSan.html">Bất động sản</a></th>
+   
+    </tr>
+</table>
+<button type="button" class="delete-row">Xóa chuyên mục</button>
 
                     </div>
                 </div>
@@ -285,6 +303,7 @@
             $(window).scrollTop(scrollPos - 200);            
         }
     });
+    
 </script>
 
 
@@ -366,10 +385,185 @@
     </div>
   </div>
 </footer>
+<div class="modal fade" id="edit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Thể thao"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder="Bóng đá"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Bóng chuyền"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Tin tức"></th>
+        <th  colspan="3"><input type="text" placeholder="Tin tức Hồ Chí Minh"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Tin tức Nghệ An"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Ẩm thực"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder="Ẩm thực Việt Nam"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Ẩm thực thế giới"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input type="text" placeholder="Du lịch"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder="Du lịch Việt Nam"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Du lịch thế giới"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <table  cellspacing="0px" width="100%" padding="2px">
+    <tr>
+      
+    
+        <th class="search_form" rowspan="2"><input  type="text" placeholder="Kinh doanh"></th>
+        <th class="search_form" colspan="3"><input type="text" placeholder=" Khởi nghiệp"></th>
+    </tr>
+    <tr>
+        <th class="search_form"><input type="text" placeholder="Bất động sản"></th>
+   
+    </tr>
+
+</table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+            <button type="button" class="btn btn-primary">Gửi</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/bootstrap.min.js"></script> 
 <script src="assets/js/wow.min.js"></script> 
 <script src="assets/js/slick.min.js"></script> 
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/dangnhap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+         
+            var markup = "<tr ><td class='th1' ><input type='checkbox' name='record'></td><td class='th1' >" + " <button class='glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button></td><td class='th1' >"  + name  
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+              if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
 </body>
 </html>
