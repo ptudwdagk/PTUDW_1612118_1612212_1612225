@@ -1,0 +1,119 @@
+<div>
+  <form action="" class="register">
+    <br>
+    <br>
+    <br>
+    <p style="margin-top: 10px">Đăng kí tài khoản </p>
+    <fieldset class="row1">
+        <legend>Thông tin tài khoản
+        </legend>
+        <p>
+            <label>Email *
+            </label>
+            <input style="width: 220px" type="text"/>
+          
+        </p>
+        <p>
+            <label>Mật khẩu *
+            </label>
+            <input style="width: 220px" type="text"/>
+        </p>
+        <p>
+            <label>Nhập lại mật khẩu*
+            </label>
+            <input style="width: 220px" type="text"/>
+           
+            </label>
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <legend>Thông tin cá nhân
+        </legend>
+        <p>
+            <label>Tên *
+            </label>
+            <input type="text" class="long"/>
+        </p>
+        <p>
+            <label>Điện thoại *
+            </label>
+            <input type="text" maxlength="11"/>
+        </p>
+        <p>
+            <label>Địa chỉ 
+            </label>
+            <input type="text" class="long"/>
+        </p>
+      
+        <p>
+            <label>Giới tính *</label>
+            <input type="radio" name="gender" value="radio"/>
+            <label class="gender">Nam</label>
+            <input type="radio" name="gender" value="radio"/>
+            <label class="gender" >Nữ</label>
+        </p>
+        <p>
+            <label>Ngày sinh *
+            </label>
+            <select  class="day"  style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1;i<=31;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+              </script>
+            </select>
+            <select   style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1;i<=12;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+              </script>
+              </select>
+            <select   style="border-radius: 4px; width: 137px;height: 30px; ;" name="" id="">
+							<script>
+								var html='';		
+								for(var i=1950;i<=2019;i++){
+									html+='<option>'+i+'</option>';
+								}
+								document.write(html);
+							</script>
+						</select>
+
+        </p>
+     
+      </fieldset> 
+    </div>
+    <div><button style="margin-top: 20px; margin-left: 450px"  class="button">Register &raquo;</button></div>
+</form>
+  
+<div  class="modal fade" id="dangnhap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div   class="modal-dialog" role="document">
+	  <div  style="background:  #FFA500  " class="modal-content">
+		<div>
+		  
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="login-page">
+				<div class="form">
+				 
+				  <form class="login-form">
+					<input type="text" placeholder="Email"/>
+					<input type="password" placeholder="Mật khẩu"/>
+					<button>login</button>
+					<p class="message">Bạn chưa có tài khoản? <a href="DangKi.html">Tạo tài khoản</a></p>
+				  </form>
+				</div>
+			  </div>
+		</div>
+		
+	  </div>
+	</div>
+  </div>
+  

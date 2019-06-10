@@ -18,8 +18,8 @@ app.use(express.static(__dirname+'/public'));
 // app.use(require('./middlewares/locals.mdw'));
 
 app.get('/', (req, res) => {
-  res.render('index');
-})
+  res.render('BaiViet');
+})  
 app.get('/KinhDoanh', (req, res) => {
   res.render('KinhDoanh');
 })
