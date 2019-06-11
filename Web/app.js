@@ -18,13 +18,14 @@ app.use(express.static(__dirname+'/public'));
 // app.use(require('./middlewares/locals.mdw'));
 
 app.get('/', (req, res) => {
-  res.render('BaiViet');
+  res.end('kjhkajshdkjashdasd');
 })  
+
 app.get('/KinhDoanh', (req, res) => {
   res.render('KinhDoanh');
 })
 
-
+app.use('/writer', require('./router/writer.route'));
 
 
 // app.use('/categories', require('./routes/category.route'));
