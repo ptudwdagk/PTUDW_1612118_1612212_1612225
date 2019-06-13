@@ -65,43 +65,15 @@
           <ul class="nav navbar-nav custom_nav">
             <li ><a href="index.html">Trang Chủ</a></li>
 
-            <li class="dropdown"> <a href="#"  class="" data-toggle="dropdown" role="button" aria-expanded="false">Thể Thao</a>
+            {{#each lcChuyenMuc}}
+            <li class="dropdown"> <a href="#"  class="" data-toggle="dropdown" role="button" aria-expanded="false">{{lcChuyenMuc.TenChuyenMuc}}</a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/KinhDoanh">Bóng Đá</a></li>
                 <li><a href="pages/KhoiNghiep.html">Bóng Chuyền</a></li>
               </ul>
             </li>
-
-            <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Tin Tức</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="pages/KhoiNghiep.html">Tin Tức Hồ Chí Minh</a></li>
-                <li><a href="pages/KhoiNghiep.html">Tin Tức Nghệ An</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Ẩm Thực</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="pages/KhoiNghiep.html">Ẩm Thực Việt Nam</a> </li>
-                <li><a href="pages/KhoiNghiep.html">Ẩm Thực Thế Giới</a></li>
-                </ul>
-              </li>
-
-            <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Du Lịch</a>
-              <ul class="dropdown-menu" role="menu">
-                <li ><a href="pages/KhoiNghiep.html">Du Lịch Việt Nam</a></li>
-                <li><a href="pages/KhoiNghiep.html">Du Lich Thế Giới</a></li>
-
-              </ul>
-            </li>
-
-            <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Kinh Doanh</a>
-              <ul class="dropdown-menu" role="menu">
-                <li ><a href="pages/KhoiNghiep.html">Khởi Nghiệp</a></li>
-                <li><a href="pages/BatDongSan.html">Bất Động Sản</a></li>
-
-              </ul>
-            </li>
-         
+            {{/each}}
+        
 
           </ul>
 </div>

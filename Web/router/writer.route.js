@@ -4,6 +4,8 @@ var router = express.Router();
 router.get('/post', (req, res) => {
     var txtarea = 'Duc';
     var txtinput = 'DDD';
+    console.log('hac');
+    console.log(res.locals.lcChuyenMuc);
     res.render('aaa.hbs', {
         a : txtarea,
         b : txtinput,
