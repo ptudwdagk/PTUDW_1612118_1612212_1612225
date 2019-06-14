@@ -1,7 +1,7 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
 var morgan = require('morgan');
-
+var hsb_section = require('express-handlebars-sections');
 var app = express();
 
 app.use(morgan('dev'));
@@ -10,7 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main.hbs',
-  layoutsDir: 'views/_layouts'
+  layoutsDir: 'views/_layouts',
+  helpers: {
+    section: hsb_section(),
+  }
 }));
 app.set('view engine', 'hbs');
 
@@ -26,6 +29,7 @@ app.get('/KinhDoanh', (req, res) => {
 })
 
 app.use('/', require('./router/Index.route'));
+app.use('/writer', require('./router/PhongVien.router'));
 
 
 // app.use('/categories', require('./routes/category.route'));
