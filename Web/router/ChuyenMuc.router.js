@@ -9,9 +9,7 @@ router.get('/:id', (req, res) => {
          console.log(rows);
          baibaomodel.noibat_10().then(rows_10bainoibat=>{
             baibaomodel.moinhat().then(moinhatrows=>{
-             
-              
-      
+           
                 res.render('Page.hbs',{
                     baivietchuyenmuc: rows,
                 
@@ -19,17 +17,11 @@ router.get('/:id', (req, res) => {
                   baimoinhat: moinhatrows,
                  
               })
-             
-      
-            })
-      
-            
-                
-             })
-      
            
+            })
        
-        
+             })
+  
     })
     
 
