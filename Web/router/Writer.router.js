@@ -4,16 +4,11 @@ var baidaxuatban= require('../models/Baivietdaxuatban.model');
 router.get('/', (req, res) => {
     baidaxuatban.daxuatban().then(rows=> {
 
-       res.render('PhongVien.hbs',{
+       res.render('PhongVienDanhSachBaiViet.hbs',{
            BVdaxuatban: rows,
           
        })
-
-     
-
     });
-    
-
 })
 
 

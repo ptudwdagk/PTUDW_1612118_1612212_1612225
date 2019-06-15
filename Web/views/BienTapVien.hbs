@@ -1,18 +1,30 @@
-<label style="margin-top: 20px; font-size: 16px">Chọn chuyên mục</label>
-		<select>
-			<option value="BongDa">Bóng đá</option>
-			<option value="BongChuyen">Bóng chuyền</option>
-			<option value="TinTucHoChiMinh">Tin tức Hồ Chí Minh</option>
-			<option value="TinTucNgheAn">Tin tức Nghệ An</option>
-			<option value="AmThucVietNam">Ẩm thực Việt Nam</option>
-			<option value="AmThucTheGioi">Ẩm thực thế giới</option>
-			<option value="DuLichVietNam">Du lịch Việt Nam</option>
-			<option value="DuLichTheGioi">Du Lịch Thế Giới</option>
-			<option value="KhoiNghiep">Khởi nghiệp</option>
-			<option value="BatDongSan">Bất động sản</option>
-		</select>
+{{#section 'js'}}
 
-		<table border="1" class="table" style="margin-top: 20px">
+<script>
+	function mychange(){
+		var id = document.getElementById('cm').value;
+		if (id != 0){
+		window.location='/editor/' + id;}
+	}
+</script>
+
+{{/section}}
+
+<div style="margin-top:20px">
+      <label style="font-size:16px;margin-top:15px; "> Chọn chuyên mục :</label>
+    <select onchange="mychange()" id="cm" name="cm" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid" >
+      
+	  {{#each CMNho}}
+	  {{#if isSelected}}
+		<option selected value="{{idChuyenMuc}}">{{TenCM}}</option>
+	  {{else}}
+      <option value="{{idChuyenMuc}}">{{TenCM}}</option>
+	  {{/if}}
+      {{/each}}
+  </select>
+  </div>
+
+		<table  class="table" style="margin-top: 20px;border: 1 gray solid">
 			<tr style="background: #6495ED">
 				<th width="600px">Tên bài</th>
 				<th>Người viết</th>
@@ -20,61 +32,21 @@
 				<th>Ngày gửi</th>
 				<th width="120 px">Phê duyệt</th>
 			</tr>
+			{{#each baiviet}}
 			<tr>
-				<td><a  href="" style="color: blue"> 5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ </a></td>
-				<td>Nguyễn Văn A</td>
-				<td>Pháp luật</td>
-				<td>20/04/2019</td>
+
+				<td><a  href="" style="color: blue"> {{TenBaiBao}} </a></td>
+				<td>{{HoTen}}</td>
+				<td>{{TenCM}}</td>
+				<td>{{NgayDang}}</td>
 				<td >
 					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
 
 					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
 				</td>
 			</tr>
-			<tr>
-				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ </a> </td>
-				<td>Nguyễn Văn A</td>
-				<td>Pháp luật</td>
-				<td>20/04/2019</td>
-				<td >
-					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
-
-					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-				</td>
-			</tr>
-			<tr>
-				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
-				<td>Nguyễn Văn A</td>
-				<td>Pháp luật</td>
-				<td>20/04/2019</td>
-				<td >
-					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
-
-					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-				</td>
-			</tr>
-			<tr>
-				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
-				<td>Nguyễn Văn A</td>
-				<td>Pháp luật</td>
-				<td>20/04/2019</td>
-				<td >
-					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
-
-					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-				</td>
-			</tr>
-			<tr>
-				<td><a  href="" style="color: blue">5 cán bộ Thanh tra tỉnh Thanh Hóa bị khởi tố tội nhận hối lộ</a></td>
-				<td>Nguyễn Văn A</td>
-				<td>Pháp luật</td>
-				<td>20/04/2019</td>
-				<td >
-					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
-
-					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-				</td>
-			</tr>
+			{{/each}}
+		
 		</table>
 
 		<!-- Modal -->
@@ -88,7 +60,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<textarea rows="6" cols="75">
+						<textarea style="border: 1 gray solid;font-size: 13px" rows="6" cols="75">
 							
 						</textarea>
 					</div>
@@ -110,24 +82,22 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<label>Thêm tag</label>
-						<textarea style="border-radius: 5px" rows="2" cols="75"></textarea>
-						<label style=" margin-top: 20px">Chọn chuyên mục:</label>
-						<select style="border-radius: 5px;margin-left: 20px">
-							<option value="BongDa">Bóng đá</option>
-							<option value="BongChuyen">Bóng chuyền</option>
-							<option value="TinTucHoChiMinh">Tin tức Hồ Chí Minh</option>
-							<option value="TinTucNgheAn">Tin tức Nghệ An</option>
-							<option value="AmThucVietNam">Ẩm thực Việt Nam</option>
-							<option value="AmThucTheGioi">Ẩm thực thế giới</option>
-							<option value="DuLichVietNam">Du lịch Việt Nam</option>
-							<option value="DuLichTheGioi">Du Lịch Thế Giới</option>
-							<option value="KhoiNghiep">Khởi nghiệp</option>
-							<option value="BatDongSan">Bất động sản</option>
-						</select>
+						<label>Thêm tag: </label>
+						<textarea style="border-radius: 5px ;border: 1 gray solid;font-size:13px " rows="2" cols="75"></textarea>
+						<div style="margin-top:20px">
+                         <label style="font-size:10px;margin-top:15px; "> Chọn chuyên mục :</label>
+                           					  
+							    <select  name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:12px;border: 1 gray solid" >
+                          {{#each CMNho}}
+                           <option value="{{idChuyenMuc}}">{{TenCM}}</option>
+                        {{/each}}
+                      </select>
+					  
+
+                    </div>
 						<br>
 						<label style="margin-top: 20px">Ngày đăng:</label>
-						<select id="ngaysinh" style="border-radius: 5px;width: 50px; margin-left:20px">
+						<select id="ngaysinh" style="border-radius: 5px;width: 50px; margin-left:20px;font-size:13px;border: 1 gray stulid">
 							<script>
 								var ngay='';
 								for(var i=1;i<=31;i++){
@@ -136,7 +106,7 @@
 								document.write(ngay);
 							</script>	
 						</select>
-						<select id="thangsinh" style="border-radius: 5px;width: 50px">
+						<select id="thangsinh" style="border-radius: 5px;width: 50px;font-size:13px;border: 1 gray stulid">
 							<script>
 								var thang='';
 								for(var i=1;i<=12;i++){
@@ -145,7 +115,7 @@
 								document.write(thang);
 							</script>	
 						</select>
-						<select id="namsinh" style="border-radius: 5px;width: 70px" >
+						<select id="namsinh" style="border-radius: 5px;width: 70px;font-size:13px;border: 1 gray stulid" >
 							<script>
 								var nam='';		
 								for(var i=1960;i<=2019;i++){

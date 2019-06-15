@@ -30,6 +30,7 @@ app.get('/KinhDoanh', (req, res) => {
 
 app.use('/', require('./router/Index.route'));
 app.use('/writer', require('./router/PhongVien.router'));
+app.use('/editor',require ('./router/Editor.router'));
 
 
 // app.use('/categories', require('./routes/category.route'));
