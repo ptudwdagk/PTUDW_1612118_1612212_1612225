@@ -31,6 +31,10 @@ app.get('/KinhDoanh', (req, res) => {
 app.use('/', require('./router/Index.router'));
 app.use('/baibao', require('./router/BaiViet.router'))
 app.use('/chuyenmuc', require('./router/ChuyenMuc.router'))
+app.use('/', require('./router/Index.route'));
+app.use('/writer', require('./router/PhongVien.router'));
+
+
 // app.use('/categories', require('./routes/category.route'));
 // app.use('/admin/categories', require('./routes/admin/category.route'));
 
