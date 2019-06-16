@@ -1,31 +1,11 @@
 var express = require('express');
 var router = express.Router();
-
-
-var baibaomodel= require('../models/BaiBao.model');
-
+var passport = require('passport');
+var baibaomodel = require('../models/BaiBao.model');
+var auth = require('../middlewares/auth');
 router.get('/', (req, res) => {
-    baibaomodel.noibat().then(rows=> {
-    
-
-       res.render('index.hbs',{
-           bonbaibao: rows,
-          
-       })
-
-     
-
-    });
-    
-
+    console.log(req.user);
+    res.render('index');
 })
-
-// router.post('/post', (req, res) => {
-//     var txtarea = req.body.text;
-//     var txtinput = req.body.ip;
-    
-//     console.log(txtarea + ' - ' + txtinput);
-//     res.redirect('/');
-// })
 
 module.exports = router;

@@ -2,7 +2,7 @@ var db = require('../utils/db');
 
 var result = {
     all: () => {
-        return db.load(`select * from chuyenmuc where LoaiCM = 0 `);
+        return db.load(`select * from chuyenmuc where LoaiChuyenMuc = 0 `);
     },
     // menu: () => {
     //     // return db.load(select * from chuyenmuc where LoaiCM = 0);
