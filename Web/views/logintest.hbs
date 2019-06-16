@@ -1,76 +1,159 @@
-var express = require('express');
-var bcrypt = require('bcrypt');
-var moment = require('moment');
-var passport = require('passport');
-var userModel = require('../models/user.model');
-var auth = require('../middlewares/auth');
+<!DOCTYPE html>
+<html>
 
-var router = express.Router();
+<head>
+  <title>HDDExpress</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/CssNew.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/DangNhap.css">
+  <link rel="stylesheet" type="text/css" href="/register.css">
 
-router.get('/register', (req, res, next) => {
-  res.render('vwAccount/register');
-})
+  {{{_sections.css}}}
+  <!--[if lt IE 9]>
+<script src="assets/js/html5shiv.min.js"></script>
+<script src="assets/js/respond.min.js"></script>
+<![endif]-->
+</head>
 
-router.post('/register', (req, res, next) => {
-  var saltRounds = 10;
-  var hash = bcrypt.hashSync(req.body.password, saltRounds);
-  var dob = moment(req.body.dob, 'DD/MM/YYYY').format('YYYY-MM-DD');
+<body>
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+  <div class="container">
+    <header id="header">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="header_top">
+            <div class="header_top_left">
+              <ul class="top_nav">
+                <li><a href="pages/KhoiNghiep.html">Tin mới</a></li>
+                <li><a href="pages/KhoiNghiep.html">Trong nước</a></li>
+                <li><a href="pages/KhoiNghiep.html">Ngoài nước</a></li>
+                <li><a href="pages/KhoiNghiep.html">Đời sống</a></li>
+              </ul>
+            </div>
+            <div class="header_top_right">
+              <div
+                style="height: 50px; display: flex;justify-content: space-between; padding-right:10px;margin-top: 10px; margin-left: 20px ">
+                <a href="/home"><img style="margin-left: 60px; margin-top: -30px;width: 28%;"></a>
+                <span>
+                  <ul class="sign-in" style="display: flex;justify-content: center">
+                    {{#if isAuthenticated}}
+                    <form id="frmSignout" action="/account/logout" method="POST">
 
-  var entity = {
-    f_Username: req.body.username,
-    f_Password: hash,
-    f_Name: req.body.name,
-    f_Email: req.body.email,
-    f_DOB: dob,
-    f_Permission: 0
-  }
+                      <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" id="navbarDropdown"><i class="fas fa-user"></i>&nbsp;
+                        Hellp<b>{{authUser.HoTen}}</b>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/account/profile">
+                          <i class="fa fa-user" aria-hidden="true"></i>
+                          Profile
+                        </a>
 
-  userModel.add(entity).then(id => {
-    res.redirect('/account/login');
-  })
-})
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/account/doimatkhau">
+                          <i class="fas fa-exchange-alt"></i>
+                          Đổi mật khẩu
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript: $('#frmSignout').submit();">
+                          <i class="fas fa-sign-out-alt"></i></i>
+                          Đăng xuất
+                        </a>
+                      </div>
+                    </form>
 
-router.get('/is-available', (req, res, next) => {
-  var user = req.query.username;
-  userModel.singleByUserName(user).then(rows => {
-    if (rows.length > 0)
-      return res.json(false);
+                    {{else}}
 
-    return res.json(true);
-  });
-})
+                    <li class="dropdown" style="font-family: arial, sans-serif;font-size: 14px;">
+                      <a href="/Login"><b>Đăng nhập&nbsp;&nbsp;</b><span class="mx-1"></span></a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" target="_self" class="hide-logged-in">
+                        <div class="text">|</div>
+                      </a>
+                      <div class="clear"></div>
+                    </li>
 
-router.get('/login', (req, res, next) => {
-  res.render('vwAccount/login', { layout: false });
-})
+                    <li><a class="btn-register hide-logged-in" href="/Dangki"
+                        style="font-family: arial, sans-serif;font-size: 14px;">
+                        <b>&nbsp;<span class="fa fa-user"></span>&nbsp;&nbsp;Đăng ký</b><span></span></a>
 
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
-    if (err)
-      return next(err);
+                    </li>
 
-    if (!user) {
-      return res.render('vwAccount/login', {
-        layout: false,
-        err_message: info.message
-      })
-    }
+                    {{/if}}
+                  </ul>
 
-    req.logIn(user, err => {
-      if (err)
-        return next(err);
+                </span>
+              </div>
 
-      return res.redirect('/');
-    });
-  })(req, res, next);
-})
+            </div>
+          </div>
+          <div class="header_bottom">
+            <div class="header_bottom_left"><a class="logo" href="/">HHD<strong>Express</strong> <span>Báo mới cho mọi
+                  nhà</span></a></div>
 
-router.post('/logout', (req, res, next) => {
+          </div>
+        </div>
+    </header>
+    <div id="navarea">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
 
-})
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span
+                class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <div class="header_top_left">
+              <ul class="nav navbar-nav custom_nav">
+                <li><a href="/">Trang Chủ</a></li>
 
-router.get('/profile', auth, (req, res, next) => {
-  res.end('PROFILE');
-})
+                {{#each lcChuyenMuc}}
+                <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button"
+                    aria-expanded="false">{{TenCM}}</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="/chuyenmuc/{{idcm1}}">{{cm1}}</a></li>
+                    <li><a href="/chuyenmuc/{{idcm2}}">{{cm2}}</a></li>
+                  </ul>
+                </li>
+                {{/each}}
 
-module.exports = router;
+
+              </ul>
+            </div>
+            <div class="header_top_right">
+
+              <form action="#" class="search_form">
+                <input type="text" placeholder="Text to Search">
+                <input type="submit" value="">
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    {{{body}}}
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    {{{_sections.js}}}
+</body>
+
+</html>

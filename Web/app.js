@@ -6,7 +6,7 @@ var hbs_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var numeral = require('numeral');
 
-var morgan = require('morgan');
+
 var hbs_section = require('express-handlebars-sections');
 var app = express();
 
@@ -24,15 +24,15 @@ app.engine('hbs', exphbs({
         section: hbs_sections()
     }
 }));
-
-app.use(require('./middlewares/auth-locals.mdw'));
-require('./middlewares/passport')(app);
-require('./middlewares/session')(app);
-
-
 app.set('view engine', 'hbs');
+
+require('./middlewares/session')(app);
+require('./middlewares/passport')(app);
+
+
 app.use(bodyParser());
 app.use(require('./middlewares/locals.mdw'));
+app.use(require('./middlewares/auth-locals.mdw'));
 
 
 
@@ -54,7 +54,7 @@ app.use(require('./middlewares/locals.mdw'));
 app.use(express.static(__dirname + '/public'));
 // // app.use(require('./middlewares/locals.mdw'));
 app.use('/Login', require('./router/Login.route'));
-app.use('/', require('./router/Index.route'));
+
 app.use('/DangKi', require('./router/Dangki.route'));
 
 app.use('/', require('./router/Index.router'));

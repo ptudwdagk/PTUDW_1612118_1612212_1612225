@@ -11,7 +11,6 @@ router.get('/', (req, res, next) => {
 
 // })
 router.post('/', (req, res, next) => {
-
     passport.authenticate('local', (err, user, info) => {
         if (err)
             return next(err);
@@ -21,15 +20,10 @@ router.post('/', (req, res, next) => {
                 err_message: info.message
             })
         }
-        var b = 2;
-        var a = 2;
-
         req.logIn(user, err => {
             if (err)
                 return next(err);
-
-            return res.redirect('/');
-
+            return res.redirect('/')
         });
     })(req, res, next);
 })

@@ -731,7 +731,7 @@ span.meta_more {
 }
 
 span.meta_date:before {
-    content: " ";
+    content: "? ";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -740,7 +740,7 @@ span.meta_date:before {
 }
 
 span.meta_comment:before {
-    content: " ";
+    content: "? ";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -749,7 +749,7 @@ span.meta_comment:before {
 }
 
 span.meta_more:before {
-    content: " ";
+    content: "? ";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -882,7 +882,7 @@ span.meta_more:before {
 }
 
 .single_bottom_rightbar ul li>a:before {
-    content: " ";
+    content: "? ";
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
