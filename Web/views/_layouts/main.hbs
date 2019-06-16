@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>HDDExpress</title>
   <meta charset="utf-8">
@@ -22,7 +21,6 @@
 <script src="assets/js/respond.min.js"></script>
 <![endif]-->
 </head>
-
 <body>
   <div id="preloader">
     <div id="status">&nbsp;</div>
@@ -103,7 +101,7 @@
             <div class="header_bottom_left"><a class="logo" href="/">HHD<strong>Express</strong> <span>Báo mới cho mọi
                   nhà</span></a></div>
 
-          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
     </header>
     <div id="navarea">
@@ -130,18 +128,16 @@
                 </li>
                 {{/each}}
 
+          </ul>
+</div>
+<div class="header_top_right">
 
-              </ul>
-            </div>
-            <div class="header_top_right">
+            <form action="#" class="search_form">
+              <input type="text" placeholder="Text to Search">
+              <input type="submit" value="">
 
-              <form action="#" class="search_form">
-                <input type="text" placeholder="Text to Search">
-                <input type="submit" value="">
+            </form>
 
-              </form>
-
-            </div>
           </div>
         </div>
       </nav>
@@ -155,5 +151,4 @@
     <script src="/assets/js/custom.js"></script>
     {{{_sections.js}}}
 </body>
-
 </html>
