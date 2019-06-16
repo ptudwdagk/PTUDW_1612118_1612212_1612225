@@ -6,7 +6,7 @@ var hbs_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var numeral = require('numeral');
 
-var morgan = require('morgan');
+
 var hbs_section = require('express-handlebars-sections');
 var app = express();
 
@@ -54,7 +54,7 @@ app.use(require('./middlewares/locals.mdw'));
 app.use(express.static(__dirname + '/public'));
 // // app.use(require('./middlewares/locals.mdw'));
 app.use('/Login', require('./router/Login.route'));
-app.use('/', require('./router/Index.route'));
+
 app.use('/DangKi', require('./router/Dangki.route'));
 
 app.use('/', require('./router/Index.router'));
