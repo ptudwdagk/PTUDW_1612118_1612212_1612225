@@ -6,6 +6,8 @@ var hbs_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var numeral = require('numeral');
 
+var morgan = require('morgan');
+var hbs_section = require('express-handlebars-sections');
 var app = express();
 
 app.use(express.json());
@@ -55,6 +57,12 @@ app.use('/Login', require('./router/Login.route'));
 app.use('/', require('./router/Index.route'));
 app.use('/DangKi', require('./router/Dangki.route'));
 
+app.use('/', require('./router/Index.router'));
+app.use('/baibao', require('./router/BaiViet.router'))
+app.use('/chuyenmuc', require('./router/ChuyenMuc.router'))
+
+app.use('/writer', require('./router/PhongVien.router'));
+app.use('/editor', require('./router/Editor.router'));
 
 
 // app.use('/categories', require('./routes/category.route'));
