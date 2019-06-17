@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
                     }
                     else rows[i].isSelected = false;
                 }
-                console.log(rows);
+              
         choxuatban.dangchoxuatban(req.params.id).then(row =>{
             res.render('BienTapVien.hbs',{
                 CMNho: rows,
@@ -39,15 +39,13 @@ router.get('/', (req, res) => {
 
 })
 router.post('/duyetbai',(req,res)=>{
-    var idBaiBao = req.body.idchuyenmuc;
-    baibao.singlebyid(idBaiBao).then (rows=>{
+    var idBaiBao = req.body.idchuyenmuc;     
+    baibao.singlebyid(idBaiBao).then(rows=>{
         rows[0].NgayDang=req.body.day;
         rows[0].TrangThai=2;
         baibao.update(rows[0]);
-        res.redirect('/editor');
-    })
-
-    
+        res.redirect('/editor');    
+    }) 
 
 })
 

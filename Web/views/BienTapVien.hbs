@@ -16,6 +16,7 @@
 		var index = $(this).closest("tr").index();
 		var table = document.getElementById("myTable");
         var id = table.rows[index].cells[0].innerHTML;
+		alert(id);
         idChuyenMuc.value = id;
 	});
 
@@ -38,8 +39,9 @@
 	</select>
 </div>
 
-		<table  class="table" style="margin-top: 20px;">
+		<table id="myTable" class="table" style="margin-top: 20px;">
 			<tr style="background: #6495ED">
+				<th style="width: 0%; font-size:0px"></th>
 				<th width="600px">Tên bài</th>
 				<th>Người viết</th>
 				<th>Chuyên mục</th>
@@ -48,8 +50,20 @@
 			</tr>
 			{{#each baiviet}}
 			<tr>
+				<td style="width: 0%; font-size:0px">{{idBaiBao}}</td>
+				<td><a  href="" style="color: blue"> {{TenBaiBao}} </a></td>
+				<td>{{HoTen}}</td>
+				<td>{{TenCM}}</td>
+				<td>{{NgayDang}}</td>
+				<td >
+					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
 
-</table>
+					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+				</td>
+			</tr>
+			{{/each}}
+		
+		</table>
 
 <!-- Modal -->
 <div class="modal fade" id="khongduyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
