@@ -15,11 +15,17 @@ module.exports= {
     single:id => {
         return db.load(`select *  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} `);
     },
+    singlebyid: id =>{
+        return db.load(`select * from baibao where idBaiBAo= ${id}`);
+    },
     baivietcungchuyenmuc:idCM => {
         return db.load(`select * from baibao  where ChuyenMuc = ${idCM}`)
     },
     bvnoibatnhat10huyenmucnoibat:()=>{
         return db.load(`SELECT* from baibao b2 JOIN (select b.chuyenmuc as id, c.TenCM, SUM( b.luotxem) as "tong luot xem" from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc WHERE c.LoaiCM!=0 GROUP BY b.chuyenmuc ORDER BY SUM( b.luotxem) DESC LIMIT 10) as bang2 on b2.ChuyenMuc = bang2.id GROUP by b2.ChuyenMuc ORDER by b2.luotXem DESC`);
+    },
+    update: entity=>{
+      return db.update(`baibao`,`idBaiBao`,entity);
     },
 
 }

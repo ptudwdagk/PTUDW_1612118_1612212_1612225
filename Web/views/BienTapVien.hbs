@@ -1,137 +1,116 @@
 {{#section 'js'}}
 
 <script>
-	function mychange(){
+
+	function mychange() {
 		var id = document.getElementById('cm').value;
-		if (id != 0){
-		window.location='/editor/' + id;}
+		if (id != 0) {
+			window.location = '/editor/' + id;
+		}
 	}
+
+	$("button").click(function () {
+		//var inputValue = $(this).closest("tr").find("input[type=text]").val();
+		//var selectValuse = $(this).closest("tr").find("[name='select_job']").val();
+		var idChuyenMuc = document.getElementById('idchuyenmuc');
+		var index = $(this).closest("tr").index();
+		var table = document.getElementById("myTable");
+        var id = table.rows[index].cells[0].innerHTML;
+        idChuyenMuc.value = id;
+	});
+
 </script>
 
 {{/section}}
 
 <div style="margin-top:20px">
-      <label style="font-size:16px;margin-top:15px; "> Chọn chuyên mục :</label>
-    <select onchange="mychange()" id="cm" name="cm" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid" >
-      
-	  {{#each CMNho}}
-	  {{#if isSelected}}
+	<label style="font-size:16px;margin-top:15px; "> Chọn chuyên mục :</label>
+	<select onchange="mychange()" id="cm" name="cm"
+		style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid">
+
+		{{#each CMNho}}
+		{{#if isSelected}}
 		<option selected value="{{idChuyenMuc}}">{{TenCM}}</option>
-	  {{else}}
-      <option value="{{idChuyenMuc}}">{{TenCM}}</option>
-	  {{/if}}
-      {{/each}}
-  </select>
-  </div>
+		{{else}}
+		<option value="{{idChuyenMuc}}">{{TenCM}}</option>
+		{{/if}}
+		{{/each}}
+	</select>
+</div>
 
-		<table  class="table" style="margin-top: 20px;border: 1 gray solid">
-			<tr style="background: #6495ED">
-				<th width="600px">Tên bài</th>
-				<th>Người viết</th>
-				<th>Chuyên mục</th>
-				<th>Ngày gửi</th>
-				<th width="120 px">Phê duyệt</th>
-			</tr>
-			{{#each baiviet}}
-			<tr>
+<table  id="myTable" class="table" style="margin-top: 20px;border: 1 gray solid;font-size: 12px">
+	<tr style="background: #6495ED">
+		<th style="width:0%;font-size:0px"></th>
+		<th  width="400	px">Tên bài</th>
+		<th width="150px">Người viết</th>
+		<th width="100px">Chuyên mục</th>
+		<th width="200px">Ngày gửi</th>
+		<th width="140 px">Phê duyệt</th>
+	</tr>
+	{{#each baiviet}}
+	<tr>
+		<td style="width:0%;font-size:0px">{{idBaiBao}}</td>
+		<td><a href="" style="color: blue"> {{TenBaiBao}} </a></td>
+		<td>{{HoTen}}</td>
+		<td>{{TenCM}}</td>
+		<td>{{NgayDang}}</td>
+		<td>
+			<button style="background: #cccccc" class="btn btn-primary" data-toggle="modal" data-target="#duyet" onclick="duyetbaiModal()"><img
+					src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+			<button style="background: #cccccc" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"
+				style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
+		</td>
+	</tr>
+	{{/each}}
 
-				<td><a  href="" style="color: blue"> {{TenBaiBao}} </a></td>
-				<td>{{HoTen}}</td>
-				<td>{{TenCM}}</td>
-				<td>{{NgayDang}}</td>
-				<td >
-					<button style="background: #cccccc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#duyet"><img src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
+</table>
 
-					<button style="background: #cccccc"s type="button" class="btn btn-primary" data-toggle="modal" data-target="#khongduyet"	 style="margin-left: 10px"><img src="https://img.icons8.com/color/19/000000/close-window.png"></button>
-				</td>
-			</tr>
-			{{/each}}
-		
-		</table>
+<!-- Modal -->
+<div class="modal fade" id="khongduyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<textarea style="border: 1 gray solid;font-size: 13px" rows="6" cols="75">
 
-		<!-- Modal -->
-		<div class="modal fade" id="khongduyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<textarea style="border: 1 gray solid;font-size: 13px" rows="6" cols="75">
-							
 						</textarea>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-						<button type="button" class="btn btn-primary">Gửi</button>
-					</div>
-				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+				<button type="button" class="btn btn-primary">Gửi</button>
 			</div>
 		</div>
-
-		<div class="modal fade" id="duyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Thông tin bài đăng</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<label>Thêm tag: </label>
-						<textarea style="border-radius: 5px ;border: 1 gray solid;font-size:13px " rows="2" cols="75"></textarea>
-						<div style="margin-top:20px">
-                         <label style="font-size:10px;margin-top:15px; "> Chọn chuyên mục :</label>
-                           					  
-							    <select  name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:12px;border: 1 gray solid" >
-                          {{#each CMNho}}
-                           <option value="{{idChuyenMuc}}">{{TenCM}}</option>
-                        {{/each}}
-                      </select>
-					  
-
-                    </div>
-						<br>
-						<label style="margin-top: 20px">Ngày đăng:</label>
-						<select id="ngaysinh" style="border-radius: 5px;width: 50px; margin-left:20px;font-size:13px;border: 1 gray stulid">
-							<script>
-								var ngay='';
-								for(var i=1;i<=31;i++){
-									ngay+='<option>'+i+'</option>';
-								}
-								document.write(ngay);
-							</script>	
-						</select>
-						<select id="thangsinh" style="border-radius: 5px;width: 50px;font-size:13px;border: 1 gray stulid">
-							<script>
-								var thang='';
-								for(var i=1;i<=12;i++){
-									thang+='<option>'+i+'</option>';
-								}
-								document.write(thang);
-							</script>	
-						</select>
-						<select id="namsinh" style="border-radius: 5px;width: 70px;font-size:13px;border: 1 gray stulid" >
-							<script>
-								var nam='';		
-								for(var i=1960;i<=2019;i++){
-									nam+='<option>'+i+'</option>';
-								}
-								document.write(nam);
-							</script>
-						</select>
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-						<button type="button" class="btn btn-primary">Lưu</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
+</div>
+
+<div class="modal fade" id="duyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle"><b>Chọn ngày đăng bài viết</b></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="/editor/duyetbai">
+				<div  class="modal-body">
+					<label style="margin-left:50px;font-size:13px"><b>Ngày đăng: </b></label>
+					<input style="font-size: 13px;border:1 gray solid;margin-left: 50px" type="date" name="day">
+					<input type="hidden" name="idchuyenmuc" id="idchuyenmuc">
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Lưu</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+</div>

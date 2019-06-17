@@ -1,61 +1,64 @@
- {{#section 'js'}}
- <script src="https://cdn.tiny.cloud/1/iqmy5vs2c6vans6di61x96m95nvnwbukp3x5ckqzumuolwyy/tinymce/5/tinymce.min.js"
-    referrerpolicy="origin"></script>
- <script>
-    tinymce.init({
-        selector: 'textarea#Content',
-        menubar: false,
-        entity_encoding : "raw",
-        height: 500,
-        plugins: 'paste image link autolink lists table media',
-        toolbar: [
-            'undo redo | bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright',
-            'forecolor backcolor',
-            'table link image media',
-        ],
-    });
+{{#section 'js'}}
+<script src="https://cdn.tiny.cloud/1/iqmy5vs2c6vans6di61x96m95nvnwbukp3x5ckqzumuolwyy/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: 'textarea#Content',
+    menubar: false,
+    entity_encoding: "raw",
+    height: 500,
+    plugins: 'paste image link autolink lists table media',
+    toolbar: [
+      'undo redo | bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright',
+      'forecolor backcolor',
+      'table link image media',
+    ],
+  });
 </script>
 
- {{/section}}
- 
- <div style="margin-bottom: 100px">
- <div style="margin-top: 10px; margin-bottom: 1px">
-         <div class="row">
+{{/section}}
+
+<div style="margin-bottom: 100px">
+  <div style="margin-top: 10px; margin-bottom: 1px">
+    <div class="row">
       <div class="col-lg-12 col-md-12">
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
               <li><a style=" color: #FFA500; font-weight: 600;" href="PhongVien.html">Đăng bài</a></li>
               <li><a style=" font-weight: 600;" href="PhongVienDanhSachBaiViet.html">Xem danh sách bài viết</a></li>
-              
+
             </ul>
           </div>
-        
+
         </div>
-      
+
       </div>
     </div>
 
   </div>
-  <form method="POST" >
-      <label style="font-size: 16px;margin-top:10px">Nhập tiêu đề: </label><br>
+  <form method="POST">
+    <label style="font-size: 16px;margin-top:10px">Nhập tiêu đề: </label><br>
 
-      <textarea  style="border: 1 gray solid;border-radius:5px;width: 100% " name="tieude" id="" cols="" rows="3"></textarea>
-      <label style="font-size: 16px;margin-top:10px">Tóm tắt:</label>
-      <textarea  style="border: 1 gray solid;border-radius:5px;width: 100% " name="tomtat" id="" cols="" rows="7"></textarea>
+    <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tieude" id="" cols=""
+      rows="3"></textarea>
+    <label style="font-size: 16px;margin-top:10px">Tóm tắt:</label>
+    <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tomtat" id="" cols=""
+      rows="7"></textarea>
 
-      <label style="font-size: 16px;margin-top:20px">Nội dung bài viết:</label> 
-      <textarea class="form-control" id="Content" name="noidung"></textarea>
+    <label style="font-size: 16px;margin-top:20px">Nội dung bài viết:</label>
+    <textarea class="form-control" id="Content" name="noidung"></textarea>
     <div style="margin-top:20px">
       <label style="font-size:16px;margin-top:15px; "> Chọn chuyên mục :</label>
-    <select name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid" >
-      {{#each CMNho}}
-      <option value="{{idChuyenMuc}}">{{TenCM}}</option>
-      {{/each}}
-  </select>
-  </div>
-      <label style="font-size: 16px;margin-top:10px">Tags:</label>
-      <textarea  style="border: 1 gray solid;border-radius:5px;width: 100% " name="tags" id="" cols="" rows="3"></textarea>
-      <button style="margin-left: 50%;margin-top:33px;font-size:20px;padding:3px 3px 5px 5px" type="submit">Gửi bài</button>
- </form>
+      <select name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid">
+        {{#each CMNho}}
+        <option value="{{idChuyenMuc}}">{{TenCM}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <label style="font-size: 16px;margin-top:10px">Tags:</label>
+    <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tags" id="" cols="" rows="3"></textarea>
+    <button style="margin-left: 50%;margin-top:33px;font-size:20px;padding:3px 3px 5px 5px" type="submit">Gửi
+      bài</button>
+  </form>
 </div>
