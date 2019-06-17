@@ -1,119 +1,141 @@
-<div>
-  <form action="" class="register">
-    <br>
-    <br>
-    <br>
-    <p style="margin-top: 10px">Đăng kí tài khoản </p>
-    <fieldset class="row1">
-        <legend>Thông tin tài khoản
-        </legend>
-        <p>
+{{#section 'css'}}
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+
+{{/section}}
+
+{{#section 'js'}}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script>
+  $(function () {
+
+    $('#datesinh').datetimepicker({
+      format: 'd/m/Y',
+      timepicker: false,
+      mask: true,
+    });
+  })
+</script>
+<script>
+  $(function () {
+
+    $('#frmRegister').validate({
+      rules: {
+        matkhau: {
+          required: true,
+          minlength: 6
+        },
+        confirm: {
+          required: true,
+          equalTo: $('[name="matkhau"]')
+        },
+        ten: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        dob: {
+          required: true,
+        }
+      },
+      messages: {
+
+        matkhau: {
+          required: 'Your password is required.',
+          minlength: 'Your password must have at least 6 characters.'
+        },
+        confirm: {
+          required: 'Your password does not match.',
+          equalTo: 'Your password does not match.'
+        },
+        ten: {
+          required: 'Valid full name is required.',
+        },
+        email: {
+          required: 'Please enter a valid email address.',
+          email: 'Please enter a valid email address.'
+        },
+        dob: {
+          required: '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Valid date of birth is required.',
+        }
+      },
+
+      errorElement: 'small',
+      
+      errorClass: 'help-block text-danger erRed',
+      validClass: 'is-valid',
+      highlight: function (e) {
+        $(e).removeClass('is-valid').addClass('is-invalid');
+      },
+      unhighlight: function (e) {
+        $(e).removeClass('is-invalid').addClass('is-valid');
+      }
+    });
+  })
+
+
+</script>
+{{/section}}
+
+
+<form novalidate method="POST" id="frmRegister" action="/dangki" class="register">
+  <div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      <div>
+
+        <br>
+        <br>
+        <br>
+        <p style="margin-top: 10px">Đăng kí tài khoản </p>
+        <fieldset class="row1">
+          <legend>Thông tin tài khoản
+          </legend>
+          <p>
             <label>Email *
             </label>
-            <input style="width: 220px" type="text"/>
-          
-        </p>
-        <p>
+            <input name="email" style="width: 220px;height: 25px;" type="text" />
+
+          </p>
+          <p>
             <label>Mật khẩu *
             </label>
-            <input style="width: 220px" type="text"/>
-        </p>
-        <p>
+            <input name="matkhau" style="width: 220px;height: 25px;" type="password" />
+          </p>
+          <p>
             <label>Nhập lại mật khẩu*
             </label>
-            <input style="width: 220px" type="text"/>
-           
+            <input name="confirm" style="width: 220px;height: 25px;" type="password" />
+
             </label>
-        </p>
-    </fieldset>
-    <fieldset class="row2">
-        <legend>Thông tin cá nhân
-        </legend>
-        <p>
+          </p>
+        </fieldset>
+        <fieldset class="row2">
+          <legend>Thông tin cá nhân
+          </legend>
+          <p>
             <label>Tên *
             </label>
-            <input type="text" class="long"/>
-        </p>
-        <p>
-            <label>Điện thoại *
-            </label>
-            <input type="text" maxlength="11"/>
-        </p>
-        <p>
-            <label>Địa chỉ 
-            </label>
-            <input type="text" class="long"/>
-        </p>
-      
-        <p>
-            <label>Giới tính *</label>
-            <input type="radio" name="gender" value="radio"/>
-            <label class="gender">Nam</label>
-            <input type="radio" name="gender" value="radio"/>
-            <label class="gender" >Nữ</label>
-        </p>
-        <p>
-            <label>Ngày sinh *
-            </label>
-            <select  class="day"  style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
-							<script>
-								var html='';		
-								for(var i=1;i<=31;i++){
-									html+='<option>'+i+'</option>';
-								}
-								document.write(html);
-              </script>
-            </select>
-            <select   style="border-radius: 4px; width: 50px;height: 30px; ;" name="" id="">
-							<script>
-								var html='';		
-								for(var i=1;i<=12;i++){
-									html+='<option>'+i+'</option>';
-								}
-								document.write(html);
-              </script>
-              </select>
-            <select   style="border-radius: 4px; width: 137px;height: 30px; ;" name="" id="">
-							<script>
-								var html='';		
-								for(var i=1950;i<=2019;i++){
-									html+='<option>'+i+'</option>';
-								}
-								document.write(html);
-							</script>
-						</select>
+            <input name="ten" style="width: 220px;height: 25px;"  type="text" class="long" />
+          </p>
 
-        </p>
-     
-      </fieldset> 
+          <p>
+            <label>Ngày sinh
+            </label>
+            <input type="date" class="form-control" style="width: 220px;height: 30px;" id="" name="dob">
+          </p>
+
+        </fieldset>
+      </div>
+      <div>
+        <button type="submit" style="margin-top: 20px; margin-left: 450px" class="button">
+          Register
+        </button>
+      </div>
     </div>
-    <div><button style="margin-top: 20px; margin-left: 450px"  class="button">Register &raquo;</button></div>
-</form>
-  
-<div  class="modal fade" id="dangnhap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-	<div   class="modal-dialog" role="document">
-	  <div  style="background:  #FFA500  " class="modal-content">
-		<div>
-		  
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<div class="login-page">
-				<div class="form">
-				 
-				  <form class="login-form">
-					<input type="text" placeholder="Email"/>
-					<input type="password" placeholder="Mật khẩu"/>
-					<button>login</button>
-					<p class="message">Bạn chưa có tài khoản? <a href="DangKi.html">Tạo tài khoản</a></p>
-				  </form>
-				</div>
-			  </div>
-		</div>
-		
-	  </div>
-	</div>
   </div>
-  
+
+</form>

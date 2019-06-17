@@ -1,27 +1,31 @@
-var db =require('../utils/db')
-module.exports= {
+var db = require('../utils/db')
+module.exports = {
     noibat: () => {
         return db.load(`select * from baibao order by luotXem desc limit 5`);
     },
+    add: entity => {
+        return db.add('thanhvien', entity)
+    },
+
     noibat_10: () => {
         return db.load(`select * from baibao order by luotXem desc limit 10 `);
     },
-    moinhat: ()=>{
+    moinhat: () => {
         return db.load(`select * from baibao order by ngaydang desc limit 10 `);
     },
-    moinhatmoichuyenmuc:()=> {
+    moinhatmoichuyenmuc: () => {
         return db.load(`select  distinct chuyenmuc from baibao order by ngaydang desc limit 6`);
     },
-    single:id => {
+    single: id => {
         return db.load(`select *  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} `);
     },
     singlebyid: id =>{
         return db.load(`select * from baibao where idBaiBAo= ${id}`);
     },
-    baivietcungchuyenmuc:idCM => {
+    baivietcungchuyenmuc: idCM => {
         return db.load(`select * from baibao  where ChuyenMuc = ${idCM}`)
     },
-    bvnoibatnhat10huyenmucnoibat:()=>{
+    bvnoibatnhat10huyenmucnoibat: () => {
         return db.load(`SELECT* from baibao b2 JOIN (select b.chuyenmuc as id, c.TenCM, SUM( b.luotxem) as "tong luot xem" from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc WHERE c.LoaiCM!=0 GROUP BY b.chuyenmuc ORDER BY SUM( b.luotxem) DESC LIMIT 10) as bang2 on b2.ChuyenMuc = bang2.id GROUP by b2.ChuyenMuc ORDER by b2.luotXem DESC`);
     },
     update: entity=>{
