@@ -6,10 +6,10 @@ var chuyenmucmodel= require('../models/ChuyenMuc.model');
 
 router.get('/:id', (req, res) => {
     chuyenmucmodel.single(req.params.id).then(rows=>{
-         
+       
          baibaomodel.noibat_10().then(rows_10bainoibat=>{
             baibaomodel.moinhat().then(moinhatrows=>{
-           
+               
                 res.render('Page.hbs',{
                     baivietchuyenmuc: rows,
                 

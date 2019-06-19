@@ -1,50 +1,20 @@
-{{#section 'js'}}
-
-{{/section}}
-
 <section id="mainContent">
-    <div class="content_top">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm6">
-          <div class="latest_slider">
-            <div class="slick_slider">
-              {{#each bonbaibao}}
-              <div class="single_iteam" ><img class="img-top"src="{{AnhDaiDien}}" alt="">
-                <h2><a class="slider_tittle" href="/baibao/{{idBaiBao}}">{{TenBaiBao}}</a></h2>
-              </div>
-              {{/each}}
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm6">
-          <div class="content_top_right">
-            <ul class="featured_nav wow fadeInDown">
-              {{#each baimoinhat}}
-              <li><img src="{{AnhDaiDien}}" alt="">
-                <div class="title_caption"><h3><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}}
-                </a></h3></div>
-
-              </li>
-             {{/each}}
-              
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <div class="content_bottom">
       <div class="col-lg-8 col-md-8">
         <div class="content_bottom_left">
-            
-          <div class="games_fashion_area">
-             {{#each baithuocchuyenmucnoibat }}
-            <div class="games_category">
-            
-              <div class="single_category">
-               
-                <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="#">{{TenCM}}</a> </h2>
-                <ul class="fashion_catgnav wow fadeInDown">
+          <div class="single_category wow fadeInDown">
+            <div class="archive_style_1">
+              <div style="margin-top:15px;">
+                <ol class="breadcrumb">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#"></a></li>
+                  
+                </ol>
+              </div>
+              <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text"> </span>  </h2>
+              {{#each baiviettimkiem}} 
+              <div class="business_category_left wow fadeInDown">
+                <ul class="fashion_catgnav">
                   <li>
                     <div class="catgimg2_container"> <a href="/baibao/{{idBaiBao}}"><img alt="" src="{{AnhDaiDien}}"></a> </div>
                     <h2 class="catg_titile"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}}</a></h2>
@@ -52,16 +22,29 @@
                     <p>{{NoiDungTomTat}}</p>
                   </li>
                 </ul>
-                  
               </div>
+              {{/each}}
+             
+              
              
             </div>
-               {{/each}}
           </div>
-      
+        </div>
+        <div class="pagination_area">
+          <nav>
+            <ul class="pagination">
+              <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4">
         <div class="content_bottom_right">
          
           <div class="single_bottom_rightbar">
@@ -103,7 +86,14 @@
                           <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
                           <p>{{NoiDungTomTat}} </p>
                           <div class="Date">{{NgayDangBai.Date}}</div>
-                         </div>
+                         
+                           <div class="Tags">
+                          <strong>Tags: </strong>
+                          <a href="/baibao/{{idBaiBao}}">Bai Viet 1</a>
+                          ,
+                          <a href="/baibao/{{idBaiBao}}">Bai Viet 2</a>
+                        </div>
+                        </div>
                       </div>
                     </li>
                     {{/each}}
@@ -127,14 +117,14 @@
           <div class="single_footer_top wow fadeInLeft">
             <h2>Flicker Images</h2>
             <ul class="flicker_nav">
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
+              <li> <a href="#"><img src="../images/75x75.jpg" alt=""></a> </li>
             </ul>
           </div>
         </div>
@@ -142,51 +132,40 @@
           <div class="single_footer_top wow fadeInDown">
             <h2>Labels</h2>
             <ul class="labels_nav">
-              <li><a href="#">Thể thao</a></li>
-              <li><a href="#">Tin tức</a></li>
-              <li><a href="#">Ẩm thực</a></li>
-              <li><a href="#">Du Lịch</a></li>
-              <li><a href="#">Kinh doanh</a></li>
-              
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="single_footer_top wow fadeInRight">
             <h2>About Us</h2>
-            <p style="font-size: 16px;color: yellow"> HHDExpress</p>
-            <p>Địa chỉ: 100/53 Dương Bá Trạc, Phường 2, Quận8, TP Hồ Chí Minh</p>
-            
+            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec laoreet orci, eget ullamcorper quam. Phasellus lorem neque, </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-</footer>
-<div  class="modal fade" id="dangnhap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-	<div   class="modal-dialog" role="document">
-	  <div  style="background:  #FFA500  " class="modal-content">
-		<div>
-		  
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<div class="login-page">
-				<div class="form">
-				 
-				  <form class="login-form">
-					<input type="text" placeholder="Email"/>
-					<input type="password" placeholder="Mật khẩu"/>
-					<button>login</button>
-					<p class="message">Bạn chưa có tài khoản? <a href="DangKi.html">Tạo tài khoản</a></p>
-				  </form>
-				</div>
-			  </div>
-		</div>
-		
-	  </div>
-	</div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_left">
+            <p>Copyright &copy; 2045 <a href="../index.html">magExpress</a></p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_right">
+            <p>Developed BY Wpfreeware</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</footer>
