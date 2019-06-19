@@ -56,7 +56,6 @@ app.use(express.static(__dirname + '/public'));
 app.use('/Login', require('./router/Login.route'));
 
 app.use('/DangKi', require('./router/Dangki.route'));
-app.use('/profile', require('./router/profile.route'));
 app.use('/', require('./router/Index.router'));
 app.use('/baibao', require('./router/BaiViet.router'))
 app.use('/chuyenmuc', require('./router/ChuyenMuc.router'))
