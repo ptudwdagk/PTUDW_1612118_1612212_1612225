@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var baibaomodel = require('../models/BaiBao.model');
 var auth = require('../middlewares/auth');
+var userModel = require('../models/BienTapVien.model');
 
 router.get('/', (req, res, next) => {
         res.render('login');
@@ -21,14 +22,31 @@ router.post('/', (req, res, next) => {
             })
         }
         req.logIn(user, err => {
-            if (err)
-                return next(err);
-            return res.redirect('/')
+            userModel.getPassByEmail(user.Email).then(tk => {
+                if (tk[0].PhanHe == 3) {
+                    return res.redirect('/');
+                }
+                if (tk[0].PhanHe == 2) {
+                    return res.redirect('/');
+                }
+                if (tk[0].PhanHe == 1) {
+                    return res.redirect('/');
+                }
+                if (tk[0].PhanHe == 4) {
+                    return res.redirect('/');
+                } else {
+                    return res.redirect('/Admin');
+                }
+            })
+
         });
     })(req, res, next);
 })
 router.get('/index', auth, (req, res, next) => {
     res.end('index');
 })
-
+router.get('/logout', (req, res, next) => {
+    req.logOut();
+    res.redirect('/Login')
+})
 module.exports = router;
