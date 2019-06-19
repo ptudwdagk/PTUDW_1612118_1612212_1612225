@@ -15,7 +15,7 @@ module.exports = {
     },
     
     single: id => {
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} `);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from nhantag nt join tag_baibao tb on nt.idTag = tb.idTag  join  baibao b on tb.idBaiBao= b.idBaiBao  join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} `);
     },
     singlebyid: id =>{
         return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where idBaiBAo= ${id}`);

@@ -63,8 +63,10 @@ app.use('/chuyenmuc', require('./router/ChuyenMuc.router'))
 
 app.use('/writer', require('./router/PhongVien.router'));
 app.use('/editor', require('./router/Editor.router'));
-app.use('/admin', require('./router/Admin.router'));
-app.use('/DoiMatKhau', require('./router/DoiMatKhau.route'));
+app.use('/admin',require('./router/Admin.router'));
+app.use('/doimatkhau', require('./router/DoiMatKhau.route') );
+
+app.use('/profile', require('./router/profile.route') );
 
 // app.use('/categories', require('./routes/category.route'));
 // app.use('/admin/categories', require('./routes/admin/category.route'));
