@@ -16,6 +16,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     src: local('Arial Regular'), local('Arial-Regular'), url("../fonts/Arial-Regular-400.woff") format('woff')
 }
 
+.img-top {
+    width: 560px;
+    height: 420px;
+    margin: auto;
+    display: flex;
+    align-self: center;
+}
+
 body {
     background-color: #fff;
     color: #333;

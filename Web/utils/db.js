@@ -6,7 +6,7 @@ var createConnection = () => {
         port: '3306',
         user: 'root',
         password: '',
-        database: 'hhd_express'
+        database: 'hhd_epxress'
     });
 }
 
