@@ -45,32 +45,57 @@
                 <span>
                   <ul class="sign-in" style="display: flex;justify-content: center">
                     {{#if isAuthenticated}}
-                    <li class="nav-item dropdown" >
-                      <form id="frmSignout" action="/account/logout" method="POST" style="height: 20px;" >
+                    <li class="nav-item dropdown">
+                      <form id="frmSignout" action="/logout" method="POST" style="height: 20px;">
 
                         <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" id="navbarDropdown">
-                          <b >{{authUser.HoTen}}</b>
-                          &nbsp;<i class="fa fa-caret-down" style="font-size:18px"></i>
+                          <b style="color: #F1F1F1">{{authUser.HoTen}}</b>
+                          &nbsp;<i style="color: #F1F1F1" class="fa fa-caret-down" style="font-size:18px"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background-color: #373C40">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
+                          style="background-color: #373C40">
                           <a class="dropdown-item" href="/profile">
                             &nbsp;&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i>
-                           
-                            <a>&nbsp;&nbsp;&nbsp;Profile</a>
-                        
+
+                            &nbsp;&nbsp;&nbsp;Profile
+
                           </a>
 
                           <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/DoiMatKhau">
+                            &nbsp;&nbsp;&nbsp;<i class="fa fa-key" aria-hidden="true"></i>
+                            &nbsp;&nbsp;&nbsp;Đổi mật khẩu
+
+                          </a>
+                          {{#if isAdmin}}
+                          <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="/account/doimatkhau">
                             &nbsp;&nbsp;&nbsp;<i class="fa fa-key" aria-hidden="true"></i>
-                            <a>&nbsp;&nbsp;&nbsp;Đổi mật khẩu</a>
-                            
+                            &nbsp;&nbsp;&nbsp;admin
+
                           </a>
+                          {{/if}}
+                           {{#if isEditer}}
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="javascript: $('#frmSignout').submit();">
-                            &nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></i>
-                            <a>&nbsp;&nbsp;&nbsp;Đăng xuất</a>
+                          <a class="dropdown-item" href="/account/doimatkhau">
+                            &nbsp;&nbsp;&nbsp;<i class="fa fa-key" aria-hidden="true"></i>
+                            &nbsp;&nbsp;&nbsp;Editer
+
+                          </a>
+                          {{/if}}
+                           {{#if isWriter}}
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/writer">
+                            &nbsp;&nbsp;&nbsp;<i class="fa fa-key" aria-hidden="true"></i>
+                            &nbsp;&nbsp;&nbsp;Writer
+
+                          </a>
+                          {{/if}}
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/Login/logout">
+                            &nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i>
+                            &nbsp;&nbsp;&nbsp;Đăng xuất
                           </a>
                         </div>
                       </form>
@@ -142,8 +167,8 @@
             </div>
             <div class="header_top_right">
 
-              <form action="#" class="search_form">
-                <input type="text" placeholder="Text to Search">
+              <form action="/timkiem" method="POST" class="search_form">
+                <input name= "ten" type="text" placeholder="Text to Search">
                 <input type="submit" value="">
 
               </form>

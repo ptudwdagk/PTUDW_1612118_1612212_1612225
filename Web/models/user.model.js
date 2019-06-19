@@ -6,11 +6,11 @@ module.exports = {
     },
 
     single: id => {
-        return db.load(`select * from users where f_ID = ${id}`);
+        return db.load(`select * ,  date_format(NgaySinh,"%d-%m-%Y") as datePublished from thanhvien where idThanhVien = ${id}`);
     },
 
     singleByUserName: userName => {
-        return db.load(`select * from thanhvien where Email = '${userName}'`);
+        return db.load(`select *, date_format(NgaySinh,"%d-%m-%Y") as datePublished from thanhvien where Email = '${userName}'`);
     },
 
     add: entity => {
@@ -25,5 +25,11 @@ module.exports = {
 
     delete: id => {
         return db.delete('users', 'f_ID', id);
-    }
+    },
+    capnhat: entity => {
+        return db.update(`thanhvien`, `idThanhVien`, entity);
+    },
+    singlesua: id => {
+        return db.load(`select * from thanhvien where idThanhVien = ${id}`);
+    },
 };

@@ -4,6 +4,17 @@ var chuyenmuc= require('../models/ChuyenMuc.model');
 var dangbai=require('../models/postModal')
 var tagg=require('../models/tagmodel')
 var baiviettagmodel=require('../models/baiviettagmodel')
+var baidaxuatban= require('../models/Baivietdaxuatban.model');
+var baibaomodel= require('../models/BaiBao.model');
+router.get('/danhsachbaiviet', (req, res) => {
+    baidaxuatban.daxuatban().then(rows=> {
+
+       res.render('PhongVienDanhSachBaiViet.hbs',{
+           BVdaxuatban: rows,
+          
+       })
+    });
+})
 router.get('/', (req, res) => {
     chuyenmuc.chuyenmucnho().then(rows=> {
 
@@ -13,6 +24,26 @@ router.get('/', (req, res) => {
        })
     });
 })
+router.get('/:id', (req, res) => {
+    baibaomodel.single(req.params.id).then(rows=>{
+        chuyenmuc.chuyenmucnho().then(rows_cm=> {
+            var i;
+            for(i = 0; i < rows_cm.length; i++){
+                if (rows_cm[i].idChuyenMuc == rows[0].ChuyenMuc){
+                    rows_cm[i].isSelected = true;
+                }
+                else rows_cm[i].isSelected = false;
+            }
+        res.render('PhongVien.hbs',{
+            baibaocansua: rows[0],
+            CMNho: rows_cm,
+        })
+    })
+    })
+    
+
+})
+
 router.post('/',(req,res) => {
 var now= new Date();
 var month= now.getMonth()+1;

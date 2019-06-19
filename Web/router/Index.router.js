@@ -29,6 +29,21 @@ router.get('/', (req, res) => {
     
 
 })
+router.post('/timkiem',(req,res)=>{
+  
+  baibaomodel.timkiembaibao(req.body.ten).then(rows_timkiem=>{
+    baibaomodel.noibat_10().then(rows_10bainoibat=>{
+      baibaomodel.moinhat().then(moinhatrows=>{
+      res.render('timkiem',{
+        baiviettimkiem: rows_timkiem,
+        muoibaibao:rows_10bainoibat,
+        baimoinhat: moinhatrows,
+      })
+    })      
+  }) 
+}) 
+}) 
+
 
 // router.post('/post', (req, res) => {
 //     var txtarea = req.body.text;
@@ -38,4 +53,4 @@ router.get('/', (req, res) => {
 //     res.redirect('/');
 // })
 
-module.exports = router;
+module.exports = router ;

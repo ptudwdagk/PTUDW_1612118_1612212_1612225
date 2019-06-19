@@ -34,10 +34,10 @@
                                 alt="">
                             <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
                                 <li class="list-group-item active">
-                                    <a href="index_docGia_TK.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
+                                    <a href="index_docGia_TK.html" style="color: #F1F1F1"><i class="fa fa-user"></i>  Thông tin tài khoản</a>
                                 </li>
                                 <li class="list-group-item ">
-                                    <a href=""><i class="fa fa-lock"></i>Thay đổi mật khẩu</a>
+                                    <a href=""><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
                                 </li>
                             </ul>
                             <hr>
@@ -61,7 +61,7 @@
                                                                     <div class="modal-content">
                                                                         <h2 style="margin-left: 40%;">Chỉnh sửa</h2>
                                                                         <form method="post"
-                                                                            action="/admin/approvepost/{{this.id}}">
+                                                                            action="/profile/approvepost">
 
                                                                             <div class="form-group">
                                                                                 <label for="pwd"
@@ -81,7 +81,7 @@
                                                                                     style=" background: #F5F5DC;color:black;width:30%;margin-left: 60px;padding-left:10px"
                                                                                     id="pwd"
                                                                                    
-                                                                                    name="publishdate" placeholder="{{authUser.HoTen}}">
+                                                                                    name="name" placeholder="{{authUser.HoTen}}">
                                                                                   
                                                                                 
                                                                             </div>
@@ -117,7 +117,7 @@
                                             <hr>
                                             <dt><strong>Ngày sinh </strong></dt>
                                             <dd>
-                                                <span class="lbl-data">{{authUser.datePublished }}</span>
+                                                <span class="lbl-data">{{authUser.NgaySinh }}</span>
                                                 <span>
                                                     <span>
                                                        

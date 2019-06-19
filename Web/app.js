@@ -56,14 +56,15 @@ app.use(express.static(__dirname + '/public'));
 app.use('/Login', require('./router/Login.route'));
 
 app.use('/DangKi', require('./router/Dangki.route'));
+
 app.use('/', require('./router/Index.router'));
 app.use('/baibao', require('./router/BaiViet.router'))
 app.use('/chuyenmuc', require('./router/ChuyenMuc.router'))
 
 app.use('/writer', require('./router/PhongVien.router'));
 app.use('/editor', require('./router/Editor.router'));
-app.use('/admin',require('./router/Admin.router'));
-
+app.use('/admin', require('./router/Admin.router'));
+app.use('/DoiMatKhau', require('./router/DoiMatKhau.route'));
 
 // app.use('/categories', require('./routes/category.route'));
 // app.use('/admin/categories', require('./routes/admin/category.route'));

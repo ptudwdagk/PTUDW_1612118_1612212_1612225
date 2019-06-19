@@ -5,8 +5,8 @@
                 <div class="header_top">
                     <div class="header_top_left">
                         <ul class="top_nav">
-                            <li><a style=" font-weight: 600;" href="PhongVien.html">Đăng bài</a></li>
-                            <li><a style=" color: #FFA500; font-weight: 600;" href="PhongVienDanhSachBaiViet.html">Xem
+                            <li><a style=" font-weight: 600;" href="/writer">Đăng bài</a></li>
+                            <li><a style=" color: #FFA500; font-weight: 600;" href="/writer/danhsachbaiviet">Xem
                                     danh sách bài viết</a></li>
 
                         </ul>
@@ -19,7 +19,7 @@
     </div>
     <div class="single_bottom_rightbar">
         <ul role="tablist" class="nav nav-tabs custom-tabs">
-            <li  role="presentation"><a data-toggle="tab" role="tab" aria-controls="home"
+            <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="home"
                     href="#baiVietDaXuatBan">Bài viết đã xuất bản</a></li>
             <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="messages"
                     href="#baiVietChoPheDuyet">Bài viết chờ phê duyệt</a></li>
@@ -34,10 +34,10 @@
                     {{#each BVdaxuatban}}
                     <li>
                         
-                        <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{AnhDaiDien}}"
+                        <div class="media wow fadeInDown"> <a class="media-left"  href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
                                     alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
+                                <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                                 <p>{{NoiDungTomTat}} </p>
                                 <div class="Date">{{NgayDang}}</div>
                             </div>
@@ -51,19 +51,22 @@
 
             <div id="baiVietChoPheDuyet" class="tab-pane fade" role="tabpanel">
                 <ul class="small_catg popular_catg">
+                  
                     {{#each BVdaxuatban}}
+                  
                     <li>
                         
-                        <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{AnhDaiDien}}"
+                        <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
                                     alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
+                                <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                                 <p>{{NoiDungTomTat}} </p>
                                 <div class="Date">{{NgayDang}}</div>
                             </div>
                         </div>
                       
                     </li>
+                    
                       {{/each}}
 
                 </ul>
@@ -73,10 +76,10 @@
                     {{#each BVdaxuatban}}
                     <li>
                         
-                        <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{AnhDaiDien}}"
+                        <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
                                     alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
+                                <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                                 <p>{{NoiDungTomTat}} </p>
                                 <div class="Date">{{NgayDang}}</div>
                             </div>
@@ -87,20 +90,20 @@
 
                 </ul>
             </div>
-              <div id="baiVietBiTuChoi" class="tab-pane fade" role="tabpanel">
+             <div id="baiVietBiTuChoi" class="tab-pane fade" role="tabpanel">
                 <ul class="small_catg popular_catg">
                     {{#each BVdaxuatban}}
                     <li>
-                        
-                        <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{AnhDaiDien}}"
+                        <form method="POST" >
+                        <div class="media wow fadeInDown"> <a type="submit" class="media-left" href="/writer/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
                                     alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
+                                <h4 class="media-heading"><a href="/writer/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                                 <p>{{NoiDungTomTat}} </p>
                                 <div class="Date">{{NgayDang}}</div>
                             </div>
                         </div>
-                      
+                      </form>
                     </li>
                       {{/each}}
 
