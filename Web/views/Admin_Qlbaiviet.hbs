@@ -88,7 +88,7 @@
                   <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
+                  <a href="/admin/xemdanhsachbaiviet/"><i class="fa fa-archive"></i> Quản lý bài viết</a>
                 </li>
                 <li class="list-group-item">
                   <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
@@ -164,18 +164,19 @@
                       </tr>
                       {{#each baiviet}}
                       <tr>
-                        <form method="POST" >
+                        <form method="POST" action="/admin/xemdanhsachbaiviet/xoabai/{{idBaiBao}}">
                         <td style="width: 0%; font-size:0px">{{idBaiBao}}</td>
                         <td><a href="/baibao/{{idBaiBao}}" style="color: blue"> {{TenBaiBao}} </a></td>
                         <td>{{HoTen}}</td>
                         <td>{{TenCM}}</td>
-                        <td>{{NgayDang}}</td>
+                        <td>{{NgayDangBai}}</td>
                         <td>
-                             <button type="submit" style="background: #cccccc;margin-left:20px" title="Xóa bài viết" stype="button"
+                             <button type="submit" style="background: #cccccc;margin-left:20px" title="Xóa bài viết"
                                                         class="btn btn-primary"><img
                                                             src="https://img.icons8.com/color/19/000000/close-window.png"></button>
 
                         </td>
+                        </form>
                       </tr>
                       {{/each}}
 

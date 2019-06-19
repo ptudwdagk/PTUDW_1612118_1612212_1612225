@@ -18,7 +18,7 @@ module.exports = {
         return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} and  b.Xoa!=1 `);
     },
     singlebyid: id =>{
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where idBaiBAo= ${id} and Xoa=!1`);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where idBaiBAo= ${id} and Xoa!=1`);
     },
     baivietcungchuyenmuc: idCM => {
         return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao  where ChuyenMuc = ${idCM} and Xoa!=1 order by NgayDangBai DESC`)

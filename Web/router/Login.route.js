@@ -24,18 +24,18 @@ router.post('/', (req, res, next) => {
         req.logIn(user, err => {
             userModel.getPassByEmail(user.Email).then(tk => {
                 if (tk[0].PhanHe == 3) {
-                    return res.redirect('/');
+                    return res.redirect('/editor');
                 }
                 if (tk[0].PhanHe == 2) {
-                    return res.redirect('/');
+                    return res.redirect('/writer');
                 }
                 if (tk[0].PhanHe == 1) {
                     return res.redirect('/');
                 }
                 if (tk[0].PhanHe == 4) {
-                    return res.redirect('/');
+                    return res.redirect('/Admin/duyetbai');
                 } else {
-                    return res.redirect('/Admin');
+                    return res.redirect('/');
                 }
             })
 
