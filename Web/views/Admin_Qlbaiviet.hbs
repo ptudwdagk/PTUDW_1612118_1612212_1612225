@@ -156,7 +156,7 @@
                     <table id="myTable" class="table" style="margin-top: 20px;">
                       <tr style="background: #6495ED">
                         <th style="width: 0%; font-size:0px"></th>
-                        <th width="600px">Tên bài</th>
+                        <th width="500px">Tên bài</th>
                         <th>Người viết</th>
                         <th>Chuyên mục</th>
                         <th>Ngày gửi</th>
@@ -164,13 +164,14 @@
                       </tr>
                       {{#each baiviet}}
                       <tr>
+                        <form method="POST" >
                         <td style="width: 0%; font-size:0px">{{idBaiBao}}</td>
                         <td><a href="/baibao/{{idBaiBao}}" style="color: blue"> {{TenBaiBao}} </a></td>
                         <td>{{HoTen}}</td>
                         <td>{{TenCM}}</td>
                         <td>{{NgayDang}}</td>
                         <td>
-                             <button style="background: #cccccc" title="Xóa bài viết" stype="button"
+                             <button type="submit" style="background: #cccccc;margin-left:20px" title="Xóa bài viết" stype="button"
                                                         class="btn btn-primary"><img
                                                             src="https://img.icons8.com/color/19/000000/close-window.png"></button>
 

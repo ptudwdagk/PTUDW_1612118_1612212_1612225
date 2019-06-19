@@ -1,30 +1,30 @@
 var db = require('../utils/db')
 module.exports = {
     noibat: () => {
-        return db.load(`select * from baibao order by luotXem desc limit 5`);
+        return db.load(`select * from baibao where Xoa !=1 order by luotXem desc limit 5 `);
     },
     add: entity => {
         return db.add('thanhvien', entity)
     },
 
     noibat_10: () => {
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao order by luotXem desc limit 10 `);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where Xoa!=1 order by luotXem desc limit 10 `);
     },
     moinhat: () => {
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao order by NgayDangBai desc limit 10 `);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where Xoa!=1 order by NgayDangBai desc limit 10 `);
     },
     
     single: id => {
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} `);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai  from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc where idBaiBao = ${id} and  b.Xoa!=1 `);
     },
     singlebyid: id =>{
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where idBaiBAo= ${id}`);
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao where idBaiBAo= ${id} and Xoa=!1`);
     },
     baivietcungchuyenmuc: idCM => {
-        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao  where ChuyenMuc = ${idCM} order by NgayDangBai DESC`)
+        return db.load(`select *, date_format(NgayDang,"%d-%m-%Y") as NgayDangBai from baibao  where ChuyenMuc = ${idCM} and Xoa!=1 order by NgayDangBai DESC`)
     },
     bvnoibatnhat10huyenmucnoibat: () => {
-        return db.load(`SELECT*, date_format(b2.NgayDang,"%d-%m-%Y") as NgayDangBai from baibao b2 JOIN (select b.chuyenmuc as id, c.TenCM, SUM( b.luotxem) as "tong luot xem" from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc WHERE c.LoaiCM!=0 GROUP BY b.chuyenmuc ORDER BY SUM( b.luotxem) DESC LIMIT 10) as bang2 on b2.ChuyenMuc = bang2.id GROUP by b2.ChuyenMuc ORDER by b2.luotXem DESC`);
+        return db.load(`SELECT*, date_format(b2.NgayDang,"%d-%m-%Y") as NgayDangBai from baibao b2 JOIN (select b.chuyenmuc as id, c.TenCM, SUM( b.luotxem) as "tong luot xem" from baibao b join chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc WHERE c.LoaiCM!=0 and b.Xoa!=1 GROUP BY b.chuyenmuc ORDER BY SUM( b.luotxem) DESC LIMIT 10) as bang2 on b2.ChuyenMuc = bang2.id GROUP by b2.ChuyenMuc ORDER by b2.luotXem DESC`);
     },
     update: entity => {
         return db.update(`baibao`, `idBaiBao`, entity);
