@@ -1,11 +1,67 @@
-<div style="margin-top: 300px;margin-bottom: 50px ">
-    <div  class="modal-body"
-        style="margin-top: 10px;align-items: center;display: flex; flex-direction:column; justify-content: center; width: 30% ;margin: auto; border: 1px solid gray ; box-shadow: 1px 1px 1px 1px black; padding: 30px; ">
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
+<script>
+    $(function () {
+
+        $('#frmChangePassword').validate({
+            rules: {
+                oldPassword: {
+                    required: true,
+                    minlength: 6
+                },
+                newPassword: {
+                    required: true,
+                    minlength: 6
+                },
+                confirmPassword: {
+                    required: true,
+                    equalTo: $('[name="newPassword"]')
+                },
+
+            },
+            messages: {
+
+                oldPassword: {
+                    required: 'Your password is required.',
+                    minlength: 'Your password must have at least 6 characters.'
+                },
+                newPassword: {
+                    required: 'Your password is required.',
+                    minlength: 'Your password must have at least 6 characters.'
+                },
+                confirmPassword: {
+                    required: 'Your password does not match.',
+                    equalTo: 'Your password does not match.'
+                },
+
+            },
+
+            errorElement: 'small',
+
+            errorClass: 'help-block text-danger erRed',
+            validClass: 'is-valid',
+            highlight: function (e) {
+                $(e).removeClass('is-valid').addClass('is-invalid');
+            },
+            unhighlight: function (e) {
+                $(e).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
+    })
+
+
+</script>
+{{/section}}
+
+<div style="margin-top: 300px;"></div>
+<div class="modal-body"
+    style="margin-top: 10px;align-items: center;display: flex; flex-direction:column; justify-content: center; width: 30% ;margin: auto; border: 1px solid gray ; box-shadow: 1px 1px 1px 1px black; padding: 30px;margin-bottom: 100px  ">
+    <form novalidate method="POST" action="/DoiMatKhau/changePassword" id="frmChangePassword">
         <div>
             <label style="color: black"> Nhập mật khẩu cũ</label>
             <br>
-            <input style="background: #F5F5DC;color:black" class="button" type="password">
+            <input style="background: #F5F5DC;color:black" class="button" type="password" name="oldPassword">
 
         </div>
 
@@ -13,7 +69,7 @@
         <div>
             <label style="color: black"> Nhập mật khẩu mới</label>
             <br>
-            <input style="background: #F5F5DC;color:black" class="button" type="password">
+            <input style="background: #F5F5DC;color:black" class="button" type="password" name="newPassword">
 
         </div>
         <br>
@@ -21,12 +77,14 @@
 
             <label style="color: black"> Nhập lại mật khẩu mới</label>
             <br>
-            <input style="background: #F5F5DC;color:black" class="button" type="password">
+            <input style="background: #F5F5DC;color:black" class="button" type="password" name="confirmPassword">
 
         </div>
         <br>
-        <div><a href="index_docGia_TK.html" ;> <button onclick="" ; style=" margin-top: 20px; background: #337ab7"
-                    class="button">Đổi mật khẩu &raquo;</button></a></div>
-    </div>
-
+        {{!-- <div><a href="index_docGia_TK.html" ;> <button onclick="" ; style=" margin-top: 20px; background: #337ab7"
+                    class="button">Đổi mật khẩu &raquo;</button></a></div> --}}
+        <button type="submit" class="btn btn-primary"
+            style=" margin-top: 20px; background: #337ab7;margin-left: 70px">Đổi mật
+            khẩu</button>
+    </form>
 </div>
