@@ -25,8 +25,8 @@
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
-              <li><a style=" color: #FFA500; font-weight: 600;" href="PhongVien.html">Đăng bài</a></li>
-              <li><a style=" font-weight: 600;" href="PhongVienDanhSachBaiViet.html">Xem danh sách bài viết</a></li>
+              <li><a style=" color: #FFA500; font-weight: 600;" href="/writer">Đăng bài</a></li>
+              <li><a style=" font-weight: 600;" href="/writer/danhsachbaiviet">Xem danh sách bài viết</a></li>
 
             </ul>
           </div>
@@ -42,19 +42,23 @@
     <label style="font-size: 16px;margin-top:10px">Nhập tiêu đề: </label><br>
 
     <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tieude" id="" cols=""
-      rows="3"></textarea>
+      rows="3">{{baibaocansua.TenBaiBao}}</textarea>
     <label style="font-size: 16px;margin-top:10px">Tóm tắt:</label>
     <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tomtat" id="" cols=""
-      rows="7"></textarea>
+      rows="7"> {{baibaocansua.NoiDungTomTat}}</textarea>
 
     <label style="font-size: 16px;margin-top:20px">Nội dung bài viết:</label>
-    <textarea class="form-control" id="Content" name="noidung"></textarea>
+    <textarea class="form-control" id="Content" name="noidung">{{baibaocansua.NoiDung}}</textarea>
     <div style="margin-top:20px">
       <label style="font-size:16px;margin-top:15px; "> Chọn chuyên mục :</label>
-      <select name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid">
-        {{#each CMNho}}
-        <option value="{{idChuyenMuc}}">{{TenCM}}</option>
-        {{/each}}
+      <select  name="chuyenmuc" style="margin-left: 10px;height:30px;width:100px;font-size:14px;border: 1 gray solid">
+    {{#each CMNho}}
+		{{#if isSelected}}
+		<option selected value="{{idChuyenMuc}}">{{TenCM}}</option>
+		{{else}}
+		<option value="{{idChuyenMuc}}">{{TenCM}}</option>
+		{{/if}}
+		{{/each}}
       </select>
     </div>
     <label style="font-size: 16px;margin-top:10px">Tags:</label>

@@ -1,7 +1,5 @@
 {{#section 'js'}}
-<script>
-window.location = '#mostPopular';
-</script>
+
 {{/section}}
 
 <section id="mainContent">
@@ -50,7 +48,7 @@ window.location = '#mostPopular';
                   <li>
                     <div class="catgimg2_container"> <a href="/baibao/{{idBaiBao}}"><img alt="" src="{{AnhDaiDien}}"></a> </div>
                     <h2 class="catg_titile"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}}</a></h2>
-                    <div class="comments_box"> <span class="meta_date">{{NgayDang}}</span> <span class="meta_comment"><a href="#">No Comments</a></span> <span class="meta_more"><a  href="#">Read More...</a></span> </div>
+                    <div class="comments_box"> <span class="meta_date">{{NgayDangBai}}</span> <span class="meta_comment"><a href="#">No Comments</a></span> <span class="meta_more"><a  href="#">Read More...</a></span> </div>
                     <p>{{NoiDungTomTat}}</p>
                   </li>
                 </ul>
@@ -82,7 +80,7 @@ window.location = '#mostPopular';
                       <div class="media-body">
                         <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}}</a></h4>
                         <p>{{NoiDungTomTat}} </p> 
-                        <div class="Date">{{NgayDang}}</div>
+                        <div class="Date">{{NgayDangBai}}</div>
                         <div class="Tags">
                           <strong>Tags: </strong>
                           <a href="/baibao/{{idBaiBao}}">Bai Viet 1</a>
@@ -104,7 +102,7 @@ window.location = '#mostPopular';
                         <div class="media-body">
                           <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
                           <p>{{NoiDungTomTat}} </p>
-                          <div class="Date">{{NgayDang.Date}}</div>
+                          <div class="Date">{{NgayDangBai.Date}}</div>
                          </div>
                       </div>
                     </li>
