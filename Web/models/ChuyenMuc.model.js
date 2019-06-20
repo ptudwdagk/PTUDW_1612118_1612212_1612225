@@ -24,8 +24,12 @@ var result = {
     update: entity => {
         return db.update(`chuyenmuc`, `idChuyenMuc`, entity);
     },
-
-
+    cmById: id => {
+        return db.load(`select * from chuyenmuc where idChuyenMuc = ${id}`);
+    },
+    dsCmNho: () => {
+        return db.load(`select * from chuyenmuc join thanhvien on idThanhVien= NguoiQuanLyCM where  LoaiCm <> 0 `)
+    }
 }
 
 module.exports = result;

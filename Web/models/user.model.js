@@ -41,8 +41,15 @@ module.exports = {
     singlePH: id => {
         return db.load(`select * from phanhe where idPhanHe = ${id}`);
     },
-
-
+    phanhenguoidung: () => {
+        return db.load(`select *  from thanhvien  where PhanHe<>1 `);
+    },
+    phanheDocGia: () => {
+        return db.load(`select *  from thanhvien  where PhanHe= 1 `);
+    },
+    phanheEditor: () => {
+        return db.load(`select *  from thanhvien  where PhanHe= 3 `);
+    },
 
 
 };

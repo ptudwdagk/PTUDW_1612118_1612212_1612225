@@ -1,0 +1,162 @@
+<div class="before-body container">
+
+    <div class="breadcrumb-container row">
+        <div class="container-kplus">
+            <div class="col-md-12 col-xs-12">
+
+                <h2 class="title">
+                    <span>Th&#244;ng tin t&#224;i khoản</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="col-md-3 md-margin-bottom-40">
+
+
+
+
+    <img class="img-responsive profile-img margin-bottom-20"
+        src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
+
+    <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+        <li class="list-group-item active">
+            <a href="Admin.html" style="color:#F1F1F1"><i class="fa fa-user"></i>Thông tin tài khoản</a>
+        </li>
+
+        <li class="list-group-item ">
+            <a href="/mykplus/vi-vn/manage/changepassword"><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
+        </li>
+        <li class="list-group-item">
+            <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
+        </li>
+        <li class="list-group-item">
+            <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
+        </li>
+        <li class="list-group-item">
+            <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
+        </li>
+        <li class="list-group-item">
+            <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
+        </li>
+        <li class="list-group-item">
+            <a href="/admin/xemdanhsachbaiviet/"><i class="fa fa-archive"></i> Quản lý bài viết</a>
+        </li>
+        <li class="list-group-item">
+            <a href="/Admin/xemdanhsachnguoidung/"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
+        </li>
+
+
+    </ul>
+    <hr>
+
+</div>
+<div class="col-md-9">
+    <!--Profile Body-->
+    <div class="profile-body margin-bottom-20">
+        <div class="tab-v1">
+            <div id="profile" class="profile-edit tab-pane fade in active" style="margin: 10px 0 10px;">
+
+                <div class="headline">
+                    <h2>QUẢN LÝ TÀI KHOẢN</h2>
+                </div>
+                <br>
+                <div class="col-lg-12 col-md-12">
+                    <div class="header_top">
+                        <div class="header_top_left">
+                            <ul class="top_nav">
+                                <li><a style=" font-weight: 600;" href="/admin/xemdanhsachnguoidung">Người dùng
+                                    </a></li>
+                                <li><a style=" font-weight: 600;" href="/admin/xemdanhsachEditor">Editor
+                                    </a></li>
+                                <li><a style=" font-weight: 600;" href="/admin/xemdanhsachDocGia">
+                                        Gia hạn
+                                    </a></li>
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br> <br><br><br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr style="background-color: #7092cc; color: white">
+                            <th scope="col">Mã phân hệ</th>
+                            <th scope="col">Chuyên mục</th>
+                            <th scope="col">Tên người quản lý</th>
+                            <th scope="col">Chỉnh sửa</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each dsCM}}
+                        <tr>
+                            <th scope="row">{{idChuyenMuc}}</th>
+                            <td>{{TenCM}}</td>
+                            <td>{{HoTen}}</td>
+                            {{!-- <span class="lbl-data"> {{PhanHe.TenPhanHe}}</span> --}}
+                            <td><a style="width: 100px" class="pull-left btn-u btn-u-purple" data-toggle="modal"
+                                    data-target="#myModal"><i class="fa fa-pencil"></i>Chỉnh sửa</a>
+                                <div class="modal conatiner" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <div class="modal-content">
+                                                <h2 style="margin-left: 40%;">Chỉnh sửa</h2>
+                                                <form method="post" action="/admin/approvepost_CM/{{idChuyenMuc}}">
+                                                    <input type="hidden" value="{{NguoiQuanLyCM}}"
+                                                        name="idQl">
+                                                    <div class="form-group">
+                                                        <label for="pwd" style="margin-left: 20px">Nguoi quan ly chuyen muc:</label>
+                                                        <select name="macm"
+                                                            style=" background: #F5F5DC;color:black;width:30%;margin-left: 60px;padding-left:10px">
+                                                            {{#each ../dsthanhvien}}
+                                                            <option value="{{idThanhVien}}">{{HoTen}}</option>
+                                                            {{/each}}
+                                                        </select>
+
+
+                                                    </div>
+
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary"
+                                                            style="width:30%;float:left;margin-left: 70px;">Duyệt</button>
+                                                        <button type="button" class="btn btn-danger "
+                                                            style="float:right; width:30%;margin-right: 70px;"
+                                                            data-dismiss="modal">Đóng</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+
+                                            <!-- Modal footer -->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+        <!--End Profile Body-->
+    </div>
+</div>
+</div>

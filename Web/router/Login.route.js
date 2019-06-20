@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => {
                     return res.redirect('/');
                 }
                 if (tk[0].PhanHe == 4) {
-                    return res.redirect('/Admin/xemdanhsachnguoidung/' + req.user.idThanhVien);
+                    return res.redirect('/Admin/xemdanhsachnguoidung');
                 } else {
                     return res.redirect('/');
                 }
