@@ -15,6 +15,13 @@ var result = {
     single: id => {
         return db.load(`select *,  date_format(NgayDang,"%d-%m-%Y") as NgayDangBai  from baibao b join  chuyenmuc c on b.ChuyenMuc = c.idChuyenMuc  where ChuyenMuc = ${id} order by NgayDangBai DESC`);
     },
+    chuyenmucbyid: id => {
+        return db.load(`select * from chuyenmuc where NguoiQuanLyCM = ${id} and LoaiCM <>0 `);
+    },
+    update: entity => {
+        return db.update(`chuyenmuc`, `idChuyenMuc`, entity);
+    },
+
 
 }
 

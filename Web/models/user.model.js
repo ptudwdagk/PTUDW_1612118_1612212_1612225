@@ -2,7 +2,7 @@ var db = require('../utils/db');
 
 module.exports = {
     all: () => {
-        return db.load('select * from users');
+        return db.load('select * from thanhvien');
     },
 
     single: id => {
@@ -32,4 +32,17 @@ module.exports = {
     singlesua: id => {
         return db.load(`select * from thanhvien where idThanhVien = ${id}`);
     },
+    heNguoiDung: id => {
+        return db.load(` select * from phanhe where idPhanHe = ${id}`);
+    },
+    dsPhanHe: () => {
+        return db.load(`select * from phanhe `);
+    },
+    singlePH: id => {
+        return db.load(`select * from phanhe where idPhanHe = ${id}`);
+    },
+
+
+
+
 };
