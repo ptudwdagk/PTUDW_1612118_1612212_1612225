@@ -11,4 +11,7 @@ module.exports={
     update: entity => {
         return db.update ('nhantag','idTag',entity);
     },
+    dstag: () => {
+        return db.load(`select * from nhantag`);
+    },
 }

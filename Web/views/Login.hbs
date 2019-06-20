@@ -1,3 +1,49 @@
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+<script>
+    $(function () {
+
+        $('#frmLogin').validate({
+            rules: {
+                username: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+                username: {
+                    required: 'Please enter a valid email address.',
+                    email: 'Please enter a valid email address.'
+                },
+                password: {
+                    required: 'Your password is required.',
+                    minlength: 'Your password must have at least 6 characters.'
+                }
+
+            },
+
+            errorElement: 'small',
+
+            errorClass: 'help-block text-danger erRed',
+            validClass: 'is-valid',
+            highlight: function (e) {
+                $(e).removeClass('is-valid').addClass('is-invalid');
+            },
+            unhighlight: function (e) {
+                $(e).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
+    })
+
+
+</script>
+{{/section}}
+
 <div class="m-5" style="margin-top: 100px">
 
     <div class="modal-body">
@@ -12,10 +58,10 @@
                 </div>
                 {{/if}}
 
-                <form method="POST" action="/Login" class="login-form">
+                <form novalidate method="POST" action="/Login" class="login-form" id="frmLogin">
                     <input name="username" type="text" placeholder="Email" />
                     <input name="password" type="password" placeholder="Mật khẩu" />
-                    <button type="submit">  login</button>
+                    <button type="submit"> login</button>
                     <p class="message">Bạn chưa có tài khoản? <a href="/DangKi">Tạo tài khoản</a></p>
                 </form>
             </div>

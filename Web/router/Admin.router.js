@@ -4,6 +4,7 @@ var chuyenmuc= require('../models/ChuyenMuc.model');
 var choxuatban= require('../models/Baivietdaxuatban.model')
 var baibao= require('../models/BaiBao.model');
 var baidaduyet=require('../models/Baivietdaxuatban.model')
+var danhsachtag=require('../models/tagmodel')
 
 router.get('/xemdanhsachbaiviet/:id', (req, res) => {
     if (req.params.id != null)
@@ -70,16 +71,36 @@ router.get('/duyetbai', (req, res) => {
     chuyenmuc.chuyenmucnho().then(rows=> {
         res.redirect('/admin/duyetbai/' + rows[0].idChuyenMuc);
     });
-
 })
-router.post('/adminduyetbai',(req,res)=>{
 
+router.get('/qltag', (req, res) => {
+
+    danhsachtag.dstag().then(rows=> {
+        res.render('Admin_Qltags',{
+            tags: rows,
+        });
+    });
+})
+
+
+router.post('/adminduyetbai',(req,res)=>{
     var idBaiBao = req.body.idchuyenmuc;     
         baibao.singlebyid(idBaiBao).then(rows=>{
         rows[0].NgayDang=req.body.day;
         rows[0].TrangThai=2;
+        delete rows[0]['NgayDangBai'];
         baibao.update(rows[0]);
         res.redirect('/admin/duyetbai/');    
+    }) ;
+})
+router.post('/xemdanhsachbaiviet/xoabai/:id',(req,res)=>{
+    
+    var idBaiBao = req.params.id;     
+        baibao.singlebyid(idBaiBao).then(rows=>{
+        rows[0].Xoa = 1;
+        delete rows[0]['NgayDangBai'];
+        baibao.update(rows[0]);
+        res.redirect('/admin/xemdanhsachbaiviet/');    
     }) ;
 })
 

@@ -39,8 +39,9 @@ router.get('/', (req, res) => {
 router.post('/duyetbai', (req, res) => {
     var idBaiBao = req.body.idchuyenmuc;
     baibao.singlebyid(idBaiBao).then(rows => {
-        rows[0].NgaySinh = req.body.day;
+        rows[0].NgayDang = req.body.day;
         rows[0].TrangThai = 2;
+        delete rows[0]['NgayDangBai'];  
         baibao.update(rows[0]);
         res.redirect('/editor');
     })
