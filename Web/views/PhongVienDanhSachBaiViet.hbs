@@ -52,14 +52,14 @@
             <div id="baiVietChoPheDuyet" class="tab-pane fade" role="tabpanel">
                 <ul class="small_catg popular_catg">
                   
-                    {{#each BVdaxuatban}}
+                    {{#each BaiVietChuaDuocDuyet}}
                   
                     <li>
                         
-                        <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
+                        <div class="media wow fadeInDown"> <a class="media-left" href="/writer/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
                                     alt=""></a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
+                                <h4 class="media-heading"><a href="/writer/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                                 <p>{{NoiDungTomTat}} </p>
                                 <div class="Date">{{NgayDang}}</div>
                             </div>
@@ -73,7 +73,7 @@
             </div>
               <div id="baiVietChoXuatBan" class="tab-pane fade" role="tabpanel">
                 <ul class="small_catg popular_catg">
-                    {{#each BVdaxuatban}}
+                    {{#each BaiVietDangChoXuatBan}}
                     <li>
                         
                         <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}"
@@ -92,7 +92,7 @@
             </div>
              <div id="baiVietBiTuChoi" class="tab-pane fade" role="tabpanel">
                 <ul class="small_catg popular_catg">
-                    {{#each BVdaxuatban}}
+                    {{#each BaiVietBiTuChoi}}
                     <li>
                         <form method="POST" >
                         <div class="media wow fadeInDown"> <a type="submit" class="media-left" href="/writer/{{idBaiBao}}"><img src="{{AnhDaiDien}}"

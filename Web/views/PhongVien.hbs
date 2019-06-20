@@ -38,11 +38,13 @@
 
   </div>
 
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data" >
     <label style="font-size: 16px;margin-top:10px">Nhập tiêu đề: </label><br>
-
+    
     <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tieude" id="" cols=""
       rows="3">{{baibaocansua.TenBaiBao}}</textarea>
+      <label style="font-size: 16px;margin-top:10px">Chọn ảnh đại diện: </label><br>
+      <input type="file" accept="image/*" name="anhdaidien"  >
     <label style="font-size: 16px;margin-top:10px">Tóm tắt:</label>
     <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tomtat" id="" cols=""
       rows="7"> {{baibaocansua.NoiDungTomTat}}</textarea>
@@ -61,8 +63,9 @@
 		{{/each}}
       </select>
     </div>
-    <label style="font-size: 16px;margin-top:10px">Tags:</label>
-    <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tags" id="" cols="" rows="3"></textarea>
+    <label style="font-size: 16px;margin-top:10px">Tags: </label>
+   
+    <textarea style="border: 1 gray solid;border-radius:5px;width: 100% " name="tags" id="" cols="" rows="3"> {{#each tag }}{{tenTag}}; {{/each}}</textarea>
     <button style="margin-left: 50%;margin-top:33px;font-size:20px;padding:3px 3px 5px 5px" type="submit">Gửi
       bài</button>
   </form>
