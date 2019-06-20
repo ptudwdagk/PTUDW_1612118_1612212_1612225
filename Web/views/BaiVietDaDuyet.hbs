@@ -13,10 +13,12 @@
         //var inputValue = $(this).closest("tr").find("input[type=text]").val();
         //var selectValuse = $(this).closest("tr").find("[name='select_job']").val();
         var idChuyenMuc = document.getElementById('idchuyenmuc');
+        var idChuyenMuc1= document.getElementById('idchuyenmuc1');
         var index = $(this).closest("tr").index();
         var table = document.getElementById("myTable");
         var id = table.rows[index].cells[0].innerHTML;
         idChuyenMuc.value = id;
+        idChuyenMuc1.value=id;
     });
 
 </script>
@@ -161,10 +163,10 @@
                                         <table id="myTable" class="table" style="margin-top: 20px;">
                                             <tr style="background: #6495ED">
                                                 <th style="width: 0%; font-size:0px"></th>
-                                                <th width="500px">Tên bàiii</th>
+                                                <th width="500px">Tên bài</th>
                                                 <th>Người viết</th>
                                                 <th>Chuyên mục</th>
-                                                <th>Ngày gửiiii</th>
+                                                <th>Ngày gửi</th>
                                                 <th width="170 px">Phê duyệt</th>
                                             </tr>
                                             {{#each baiviet}}
@@ -180,7 +182,8 @@
                                                         data-target="#duyet"><img
                                                             src="https://img.icons8.com/color/20/000000/checkmark.png"></button>
 
-                                                    <button style="background: #cccccc" title="Từ chối duyệt" stype="button"
+                                                    <button style="background: #cccccc" type="button" title="Từ chối duyệt"
+                                                    data-target="#khongduyet" data-toggle="modal"
                                                         class="btn btn-primary"><img
                                                             src="https://img.icons8.com/color/19/000000/close-window.png"></button>
                                                 </td>
@@ -219,28 +222,53 @@
 
     <!-- Modal -->
 
-    <div class="modal fade" id="duyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Chọn ngày đăng bài viết</b></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="/admin/adminduyetbai">
-                    <div class="modal-body">
-                        <label style="margin-left:50px;font-size:13px"><b>Ngày đăng: </b></label>
-                        <input style="font-size: 13px;border:1 gray solid;margin-left: 50px" type="date" name="day">
-                        <input type="hidden" name="idchuyenmuc" id="idchuyenmuc">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Lưu</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+   <div class="modal fade" id="khongduyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="/admin/admintuchoi">
+			<div class="modal-body">
+				<textarea name="lydo" style="border: 1 gray solid;font-size: 13px" rows="6" cols="60px">
+
+						</textarea>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Gửi</button>
+				<input type="hidden" name="idchuyenmuc" id="idchuyenmuc">
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="duyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle"><b>Chọn ngày đăng bài viết</b></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="/admin/adminduyetbai">
+				<div  class="modal-body">
+					<label style="margin-left:50px;font-size:13px"><b>Ngày đăng: </b></label>
+					<input style="font-size: 13px;border:1 gray solid;margin-left: 50px" type="date" name="day">
+					<input type="hidden" name="idchuyenmuc1" id="idchuyenmuc1">
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Lưu</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 </div>

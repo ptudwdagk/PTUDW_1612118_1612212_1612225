@@ -70,6 +70,7 @@ dangbai.add(entity).then(baivietid => {
                 idTag : tagid,
                 idBaiBao : baivietid,
             })
+            res.redirect('writer');
         }).catch(err => {
             console.log(err);
         });
@@ -80,8 +81,5 @@ dangbai.add(entity).then(baivietid => {
     console.log(err);
 });
 })
-
-
-
 
 module.exports = router;

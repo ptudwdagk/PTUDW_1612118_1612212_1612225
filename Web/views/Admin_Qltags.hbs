@@ -114,54 +114,35 @@
                     </div>
                     <br>
 
-                    <!-- <table>
-        <thead>
-            <tr>
-              <th>Chọn</th>
-              <th>Chinh sua</th>
-                <th>Danh Muc</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                
-                <td><input type="checkbox" name="record"></td>
-                <td ><button name="chinhsua">chinh sua</button></td> 
-                <td>Peter Parker</td>
-                
-            </tr>
-        </tbody>
-    </table>
---><div class="table-responsive">
+            <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover" id="datatable" border="1px" cellspacing="0px" width= "100%" style="margin-bottom: 50px">
                       <tr style="height:  40px; background-color: #7092cc; color: white">
 
                         <th class="th1">Tên tag</th>
-                        <th width="100px" class="th1">Thao tác</th>
+                        <th width="300px" class="th1">Thao tác</th>
                       </tr>
                       {{#each tags}}
                       <tr style="height: 30px">
-                        <th>{{tenTag}}</th>
-                        <th>
-                          <button style="margin-left:20px;background:transparent;border:transparent" type="button"><img src="https://img.icons8.com/wired/20/000000/pencil.png"></button>
-                          <button style="margin-left:20px;background:transparent;border:transparent" type="button"><img src="https://img.icons8.com/material/20/000000/delete-forever.png"></button>
-                        </th>
+
+                        <form method="POST" action="/admin/qltag/xoatag/{{idTag}}">
+                        <input type="hidden" name="idtag" value="{{idTag}}">
+                        <td>{{tenTag}}</td>
+                        <td>
+                          <div>
+                          <input name="tagmoi" style=" display:inline-block; width:50% " placeholder="{{tenTag}}" >
+                          <button formaction="/admin/qltag/suatag/{{idTag}}" style="margin-left:20px;background:transparent;border:transparent" type="submit"><img src="https://img.icons8.com/wired/20/000000/pencil.png"></button>
+                          <button style="margin-left:20px;background:transparent;border:transparent" type="submit"><img src="https://img.icons8.com/material/20/000000/delete-forever.png"></button>
+                        </div>
+                        </td>
+                        </form>
+
+
                       </tr>
-                      {{/each}}
-                      <!--<button class='
-glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button>-->
-
-
-
-
+                      {{/each}}   
                     </table>
-
-</div>
-
+                    </div>
                   </div>
                 </div>
-                <!--End Profile Body-->
               </div>
             </div>
           </div>

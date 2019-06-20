@@ -6,7 +6,7 @@ var baibao = require('../models/BaiBao.model');
 
 router.get('/:id', (req, res) => {
     if (req.params.id != null) {
-        chuyenmuc.chuyenmucnho().then(rows => {
+        chuyenmuc.chuyenmucid(req.user.idThanhVien).then(rows => {
 
             var temp = [];
             var i;
@@ -29,18 +29,28 @@ router.get('/:id', (req, res) => {
 
 })
 
-router.get('/', (req, res) => {
-
-    chuyenmuc.chuyenmucnho().then(rows => {
+router.get('/', (req, res) => { 
+    chuyenmuc.chuyenmucid(req.user.idThanhVien).then(rows => {
         res.redirect('/editor/' + rows[0].idChuyenMuc);
     });
 
 })
 router.post('/duyetbai', (req, res) => {
-    var idBaiBao = req.body.idchuyenmuc;
+    var idBaiBao = req.body.idchuyenmuc1;
     baibao.singlebyid(idBaiBao).then(rows => {
         rows[0].NgayDang = req.body.day;
         rows[0].TrangThai = 2;
+        delete rows[0]['NgayDangBai'];  
+        baibao.update(rows[0]);
+        res.redirect('/editor');
+    })
+
+})
+router.post('/tuchoi', (req, res) => {
+    var idBaiBao = req.body.idchuyenmuc;
+    baibao.singlebyid(idBaiBao).then(rows => {
+        rows[0].LyDo = req.body.lydo;
+        rows[0].TrangThai = 4;
         delete rows[0]['NgayDangBai'];  
         baibao.update(rows[0]);
         res.redirect('/editor');
