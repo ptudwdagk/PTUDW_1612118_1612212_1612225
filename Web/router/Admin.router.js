@@ -7,6 +7,7 @@ var baidaduyet = require('../models/Baivietdaxuatban.model')
 var danhsachtag = require('../models/tagmodel')
 var thanhvien = require('../models/user.model');
 var phanhe = require('../models/user.model');
+
 router.get('/xemdanhsachbaiviet/:id', (req, res) => {
     if (req.params.id != null) {
         chuyenmuc.chuyenmucnho().then(rows => {
@@ -16,8 +17,7 @@ router.get('/xemdanhsachbaiviet/:id', (req, res) => {
             for (i = 0; i < rows.length; i++) {
                 if (rows[i].idChuyenMuc == req.params.id) {
                     rows[i].isSelected = true;
-                }
-                else rows[i].isSelected = false;
+                } else rows[i].isSelected = false;
             }
 
             baidaduyet.baivietdaduyet(req.params.id).then(row => {
@@ -31,9 +31,25 @@ router.get('/xemdanhsachbaiviet/:id', (req, res) => {
         console.log('...');
     }
 })
+
+//QLNGUOIDUNG
+// router.get('/xemdanhsachnguoidung', (req, res) => {
+
+//         thanhvien.all().then(rows => {
+
+
+//             thanhvien.phanhenguoidung().then(row => {
+//                 res.render('Admin_QlNguoiDung', {
+//                     dsThanhVien: rows,
+
+//                 })
+//             })
+//         })
+
+//     })
 //nguoi dung
-router.get('/xemdanhsachnguoidung/:id', (req, res) => {
-    if (req.params.id != null) {
+router.get('/xemdanhsachnguoidung', (req, res) => {
+
         thanhvien.all().then(rows => {
 
             res.render('Admin_QlNguoiDung', {
@@ -42,11 +58,35 @@ router.get('/xemdanhsachnguoidung/:id', (req, res) => {
 
 
         });
-    } else {
-        console.log('...');
-    }
 
+
+    })
+    // danh sach doc gia
+router.get('/xemdanhsachDocGia', (req, res) => {
+
+    thanhvien.phanheDocGia().then(rows => {
+
+        res.render('dsDocGia', {
+            dsThanhVien: rows,
+        })
+
+
+    });
 })
+router.get('/xemdanhsachEditor', (req, res) => {
+
+
+    chuyenmuc.dsCmNho().then(rows => {
+        thanhvien.all().then(rows_tv => {
+
+            res.render('dsEditor', {
+                dsCM: rows,
+                dsthanhvien: rows_tv,
+            })
+        });
+    })
+})
+
 router.get('/profile/:id', (req, res) => {
     if (req.params.id != null) {
         thanhvien.single(req.params.id).then(rows => {
@@ -80,6 +120,29 @@ router.post('/approvepost_update', (req, res) => {
     })
 
 })
+
+// ma chuyen muc
+
+router.post('/approvepost_CM/:id', (req, res) => {
+    var idCM = req.params.id;
+
+    chuyenmuc.cmById(idCM).then(rows => {
+
+        rows[0].NguoiQuanLyCM = req.body.macm;
+        chuyenmuc.update(rows[0]).then(row => {
+            res.redirect('/admin/xemdanhsachEditor')
+        })
+
+
+
+
+
+    })
+
+})
+
+
+
 // bai viet
 router.get('/xemdanhsachbaiviet/:id', (req, res) => {
     if (req.params.id != null) {
@@ -122,8 +185,7 @@ router.get('/duyetbai/:id', (req, res) => {
             for (i = 0; i < rows.length; i++) {
                 if (rows[i].idChuyenMuc == req.params.id) {
                     rows[i].isSelected = true;
-                }
-                else rows[i].isSelected = false;
+                } else rows[i].isSelected = false;
             }
 
             choxuatban.dangchoxuatban(req.params.id).then(row => {

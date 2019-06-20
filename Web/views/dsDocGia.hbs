@@ -25,8 +25,12 @@
             <a href="Admin.html" style="color:#F1F1F1"><i class="fa fa-user"></i>Thông tin tài khoản</a>
         </li>
 
-       
-       
+        <li class="list-group-item ">
+            <a href="/mykplus/vi-vn/manage/changepassword"><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
+        </li>
+        <li class="list-group-item">
+            <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
+        </li>
         <li class="list-group-item">
             <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
         </li>
@@ -62,14 +66,14 @@
                     <div class="header_top">
                         <div class="header_top_left">
                             <ul class="top_nav">
-                               <li><a style=" font-weight: 600;" href="/admin/xemdanhsachnguoidung">Người dùng
+                                <li><a style=" font-weight: 600;" href="/admin/xemdanhsachnguoidung">Người dùng
                                     </a></li>
                                       <li><a style=" font-weight: 600;" href="/admin/xemdanhsachEditor">Editor
                                     </a></li>
                                 <li><a style=" font-weight: 600;" href="/admin/xemdanhsachDocGia">
                                         Gia hạn
                                     </a></li>
-                                    
+                               
 
                             </ul>
                         </div>
@@ -77,15 +81,15 @@
                     </div>
 
                 </div>
-             
-                <br> <br><br><br>
+               
+                  <br> <br><br><br>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr style="background-color: #7092cc; color: white">
                             <th scope="col">Mã phân hệ</th>
                             <th scope="col">Tài Khoản</th>
                             <th scope="col">Hiệu Lực</th>
-                          
+                            <th scope="col">Gia Hạn</th>
 
 
                         </tr>
@@ -95,8 +99,8 @@
                         <tr>
                             <th scope="row">{{PhanHe}}</th>
                             <td><a href="/admin/profile/{{idThanhVien}}">{{Email}}</a></td>
-                            <td>{{HieuLuc}}  Ngày</td>
-                            
+                            <td>6 ngày</td>
+                            <td><input type="button" onclick="alert('Tài khoản còn hiệu lực');" value="Gia Hạn"></td>
 
                         </tr>
                         {{/each}}

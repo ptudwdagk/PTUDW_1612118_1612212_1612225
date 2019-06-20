@@ -66,8 +66,8 @@
          
           <div class="single_bottom_rightbar">
             <ul role="tablist" class="nav nav-tabs custom-tabs">
-              <li class="active" role="presentation"><a data-toggle="tab" role="tab" aria-controls="home" href="#mostPopular">Most Popular</a></li>
-              <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="messages" href="#recentComent">Recent Comment</a></li>
+              <li class="active" role="presentation"><a data-toggle="tab" role="tab" aria-controls="home" href="#mostPopular">Nổi bật nhất</a></li>
+              <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="messages" href="#recentComent">Mới nhất</a></li>
             </ul>
 
             <div class="tab-content">
@@ -76,7 +76,7 @@
 
                   {{#each muoibaibao}}
                   <li>
-                    <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{AnhDaiDien}}" alt=""></a>
+                    <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}" alt=""></a>
                       <div class="media-body">
                         <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}}</a></h4>
                         <p>{{NoiDungTomTat}} </p> 
@@ -100,7 +100,7 @@
                     <li>
                       <div class="media wow fadeInDown"> <a class="media-left" href="/baibao/{{idBaiBao}}"><img src="{{AnhDaiDien}}" alt=""></a>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="#">{{TenBaiBao}} </a></h4>
+                          <h4 class="media-heading"><a href="/baibao/{{idBaiBao}}">{{TenBaiBao}} </a></h4>
                           <p>{{NoiDungTomTat}} </p>
                           <div class="Date">{{NgayDangBai.Date}}</div>
                          </div>

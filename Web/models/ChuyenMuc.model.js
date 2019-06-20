@@ -30,6 +30,12 @@ var result = {
 
     add: entity => {
         return db.add(`chuyenmuc`, entity);
+    },
+    cmById: id => {
+        return db.load(`select * from chuyenmuc where idChuyenMuc = ${id}`);
+    },
+    dsCmNho: () => {
+        return db.load(`select * from chuyenmuc join thanhvien on idThanhVien= NguoiQuanLyCM where  LoaiCm <> 0 `)
     }
 }
 
