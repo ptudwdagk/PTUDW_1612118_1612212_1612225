@@ -30,7 +30,7 @@ router.get('/xemdanhsachbaiviet/:id', (req, res) => {
     } else {
         console.log('...');
     }
-    })
+})
 //nguoi dung
 router.get('/xemdanhsachnguoidung/:id', (req, res) => {
     if (req.params.id != null) {
@@ -47,29 +47,19 @@ router.get('/xemdanhsachnguoidung/:id', (req, res) => {
     }
 
 })
-router.get('/:id', (req, res) => {
+router.get('/profile/:id', (req, res) => {
     if (req.params.id != null) {
         thanhvien.single(req.params.id).then(rows => {
-
             thanhvien.heNguoiDung(rows[0].PhanHe).then(row => {
                 console.log(row);
                 phanhe.dsPhanHe().then(row_dsph => {
-
-
                     res.render('In4NguoiDung', {
                         infoThanhVien: rows[0],
-
                         PhanHe: row[0],
                         dsphanhe: row_dsph,
-
                     })
-
                 })
-
-
             })
-
-
         })
     }
 })
@@ -90,9 +80,6 @@ router.post('/approvepost_update', (req, res) => {
     })
 
 })
-
-
-
 // bai viet
 router.get('/xemdanhsachbaiviet/:id', (req, res) => {
     if (req.params.id != null) {
@@ -166,6 +153,18 @@ router.get('/qltag', (req, res) => {
         });
     });
 })
+router.get('/qlchuyenmuc', (req, res) => {
+
+    console.log('alksdjlkasjldasd');
+    chuyenmuc.menu().then(row => {
+
+        res.render('Admin_Qlchuyenmuc', {
+
+            chuyenmuc: row,
+        })
+
+    });
+})
 
 router.post('/qltag/xoatag/:idtag', (req, res) => {
     var idtag = req.params.idtag;
@@ -187,6 +186,76 @@ router.post('/qltag/suatag/:idtag', (req, res) => {
     });
 })
 
+router.post('/qlchuyenmuc/xoacm/', (req, res) => {
+    var idcmuc = req.body.idcm;
+    var idcm1 = req.body.idcm1;
+    var idcm2 = req.body.idcm2;
+    chuyenmuc.chuyenmucidcm(idcmuc).then(rows => {
+        chuyenmuc.chuyenmucidcm(idcm1).then(rows1 => {
+            chuyenmuc.chuyenmucidcm(idcm2).then(rows2 => {
+                rows[0].Xoa = 1;
+                rows1[0].Xoa = 1;
+                rows2[0].Xoa = 1;
+                chuyenmuc.update(rows[0]);
+                chuyenmuc.update(rows1[0]);
+                chuyenmuc.update(rows2[0]).then(a => {
+                    res.redirect('/admin/qlchuyenmuc');
+                });
+
+            })
+
+        })
+        
+    });
+})
+
+router.post('/qlchuyenmuc/suacm/', (req, res) => {
+    var idcmuc = req.body.idcm;
+    var idcm1 = req.body.idcm1;
+    var idcm2 = req.body.idcm2;
+    chuyenmuc.chuyenmucidcm(idcmuc).then(rows => {
+        chuyenmuc.chuyenmucidcm(idcm1).then(rows1 => {
+            chuyenmuc.chuyenmucidcm(idcm2).then(rows2 => {
+                rows[0].TenCM = req.body.cm;
+                rows1[0].TenCM = req.body.cm1;
+                rows2[0].TenCM = req.body.cm2;
+                chuyenmuc.update(rows[0]).then(b => {
+                    chuyenmuc.update(rows1[0]).then(c => {
+                        chuyenmuc.update(rows2[0]).then(a => {
+                            res.redirect('/admin/qlchuyenmuc');
+                        });
+                    });
+                })
+
+
+            })
+
+        })
+    });
+})
+
+router.post('/qlchuyenmuc/them/', (req, res) => {
+    var cm = {
+        TenCM : req.body.cm,
+        LoaiCM: 0,
+    }
+
+    chuyenmuc.add(cm).then(id => {
+        var cm1 = {
+            TenCM : req.body.cm1,
+            LoaiCM:id,
+        }
+        chuyenmuc.add(cm1).then(id1 => {
+            var cm2 = {
+                TenCM : req.body.cm2,
+                LoaiCM:id,
+            }
+            chuyenmuc.add(cm2).then(id2 => {
+                res.redirect('/admin/qlchuyenmuc');
+            })
+        })
+    })
+})
 
 router.post('/adminduyetbai', (req, res) => {
     var idBaiBao = req.body.idchuyenmuc1;
@@ -217,19 +286,17 @@ router.post('/xemdanhsachbaiviet/xoabai/:id', (req, res) => {
         baibao.update(rows[0]).then(a => {
             res.redirect('/admin/xemdanhsachbaiviet/');
         });
-        
+
     });
 })
 router.post('/xemdanhsachbaiviet/xoabai/:id', (req, res) => {
 
-        var idBaiBao = req.params.id;
-        baibao.singlebyid(idBaiBao).then(rows => {
-            rows[0].Xoa = 1;
-            delete rows[0]['NgayDangBai'];
-            baibao.update(rows[0]);
-            res.redirect('/admin/xemdanhsachbaiviet/');
-        });
-    })
-    // nguoidung
-
+    var idBaiBao = req.params.id;
+    baibao.singlebyid(idBaiBao).then(rows => {
+        rows[0].Xoa = 1;
+        delete rows[0]['NgayDangBai'];
+        baibao.update(rows[0]);
+        res.redirect('/admin/xemdanhsachbaiviet/');
+    });
+})
 module.exports = router;

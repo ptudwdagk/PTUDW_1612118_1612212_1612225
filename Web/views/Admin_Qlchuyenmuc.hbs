@@ -1,430 +1,167 @@
+{{#section 'css'}}
+
+<!-- DataTables CSS -->
+<link href="/assets/css/dataTables.bootstrap.css" rel="stylesheet">
+
+<!-- DataTables Responsive CSS -->
+<link href="/assets/css/dataTables.responsive.css" rel="stylesheet">
+
+{{/section}}
+
+{{#section 'js'}}
+<!-- DataTables JavaScript -->
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<script src="/assets/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#datatable').DataTable({
+      responsive: true
+    });
+  });
+</script>
+{{/section}}
 <div class="before-body container">
 
-        <div class="breadcrumb-container row">
+  <div class="breadcrumb-container row">
     <div class="container-kplus">
-        <div class="col-md-12 col-xs-12">
-            
-            <h2 class="title">
-                <span>Th&#244;ng tin t&#224;i khoản</span>
-            </h2>
-        </div>
+      <div class="col-md-12 col-xs-12">
+
+        <h2 class="title">
+          <span>Th&#244;ng tin t&#224;i khoản</span>
+        </h2>
+      </div>
     </div>
+  </div>
+
 </div>
-
-    </div>
-    <div class="body container">
-        <div class="row margin-top-20">
-            <div class="container-kplus">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="body container">
+  <div class="row margin-top-20">
+    <div class="container-kplus">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 
-                    
 
 
-<style type="text/css">
-    .profile .profile-edit hr {
-        margin: 10px 0 10px; 
-    }
 
-    .headline{margin: 10px 0 10px 0;}
-</style>
+        <style type="text/css">
+          .profile .profile-edit hr {
+            margin: 10px 0 10px;
+          }
 
-<div class="profile">
-    <div class="row">
-        <!--Left Sidebar-->
-        <div class="col-md-3 md-margin-bottom-40">
-            
-            
+          .headline {
+            margin: 10px 0 10px 0;
+          }
+        </style>
+
+        <div class="profile">
+          <div class="row">
+            <!--Left Sidebar-->
+            <div class="col-md-3 md-margin-bottom-40">
 
 
-<img class="img-responsive profile-img margin-bottom-20" src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
 
-<ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
- <li class="list-group-item active">
-        <a href="Admin.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
-    </li>    
 
-        <li class="list-group-item ">
-            <a href="/mykplus/vi-vn/manage/changepassword"><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
-        </li>
-   <li class="list-group-item">
-        <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
-    </li>
-    <li class="list-group-item">
-        <a href="Admin_phancong.html"><i class="fa fa-group"></i>Phân công chuyên mục</a>
-    </li>
-    <li class="list-group-item">
-        <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
-    </li>
-    <li class="list-group-item">
-        <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
-    </li>
-    <li class="list-group-item">
-        <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
-    </li>
-     <li class="list-group-item">
-        <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
-    </li>
-</ul>
-<hr>           
+              <img class="img-responsive profile-img margin-bottom-20"
+                src="C:/Users/King_SPG/Desktop/ứng dụng wed/Đồ Án/magexpress/images/300x215x3.jpg" alt="">
 
-        </div>
-        <!--End Left Sidebar-->
+              <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item active">
+                  <a href="Admin.html"><i class="fa fa-user"></i>Thông tin tài khoản</a>
+                </li>
 
-        <div class="col-md-9">
-            <!--Profile Body-->
-            <div class="profile-body margin-bottom-20">
+                <li class="list-group-item ">
+                  <a href="/mykplus/vi-vn/manage/changepassword"><i class="fa fa-lock"></i> Thay đổi mật khẩu</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_giahan.html"><i class="fa fa-arrows"></i> Gia hạn tài khoản người dùng</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_phancong.html"><i class="fa fa-group"></i> Phân công chuyên mục</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_QlchuyenMuc.html"><i class="fa fa-cogs "></i> Quản lý chuyên mục</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_Qltags.html"><i class="fa fa-certificate"></i> Quản lý nhãn tags</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_QLbaiViet.html"><i class="fa fa-archive"></i> Quản lý bài viết</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="Admin_QLnguoiDung.html"><i class="fa fa-asterisk"></i> Quản Lý Người Dùng</a>
+                </li>
+
+              </ul>
+              <hr>
+
+            </div>
+            <!--End Left Sidebar-->
+
+            <div class="col-md-9">
+              <!--Profile Body-->
+              <div class="profile-body margin-bottom-20">
                 <div class="tab-v1">
-                    
-                        
 
 
 
 
 
-                        <div id="profile" class="profile-edit tab-pane fade in active" >
-                            <div class="headline"><h2>QUẢN LÝ CHUYÊN MỤC</h2></div>                           
-                            <br>
-                          
-                                          <form>
-        <input type="text" id="name" placeholder="Danh mục">
-        <input type="text" id="name" placeholder="Chuyên mục">
-      <input type="button" class="add-row" value="Thêm">
-    </form>
 
-                          <table border="1px" cellspacing="0px" width="100%"  >
-                              <tr style="height:  40px; background-color: #7092cc; color: white">
-      
-        <th class="th1"  >Chọn xóa</th>
-        <th class="th1" >Chỉnh sửa</th>
-        <th class="th1" >Danh mục</th>
-        <th class="th1" >Chuyên mục</th>
-    </tr>
-    <tr >
-        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
-          <th class="th1"  rowspan="2"><button class="
-glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit1"></button>  </th>
-        <th class="th1" rowspan="2">Thể Thao</th>
-        <th class="th1" colspan="3"><a href="pages/BongDa.html">Bóng đá</a></th>
-    </tr>
-    <tr>
-        <th class="th1"><a href="pages/BongChuyen.html">Bóng chuyền</a></th>
-   
-    </tr>
 
-      <tr>
-        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
-        <th class="th1"  rowspan="2"><button class="
-glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit2"></button>  </th>
-        <th class="th1" rowspan="2">Tin Tức</th>
-        <th class="th1" colspan="3"><a href="pages/TinTucHoChiMinh.html">Tin tức Hồ Chí Minh</a></th>
-    </tr>
-    <tr>
-        <th class="th1"><a href="pages/TinTucNgheAn.html">Tin tức Nghệ An</a></th>
-   
-    </tr>
-<tr>
-        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
-         <th class="th1" rowspan="2"> <button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit3"></button>  </th>
-        <th class="th1" rowspan="2">Ẩm thực</th>
-        <th class="th1" colspan="3"><a href="pages/AmThucVietNam.html">Ẩm thực Việt Nam</a></th>
-    </tr>
-    <tr>
-        <th class="th1"><a href="pages/AmThucTheGioi.html">Ẩm thực thế giới</a></th>
-   
-    </tr >
-<tr>
-        <th class="th1"  rowspan="2"><input type="checkbox" name="record"></th>
-            <th class="th1" rowspan="2"><button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit4"></button> </th>
-        <th class="th1" rowspan="2">Du lịch</th>
-        <th class="th1" colspan="3"><a href="pages/DuLichVietNam.html">Du lịch Việt Nam</a></th>
-    </tr>
-    <tr>
-        <th class="th1"><a href="pages/DuLichTheGioi.html">Du lịch thế giới</a></th>
-   
-    </tr>
-<tr>
-        <th class="th1" rowspan="2"><input type="checkbox" name="record"></th>
-            <th class="th1" rowspan="2"> <button class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit5"></button> </th>
-        <th class="th1" rowspan="2">Kinh doanh</th>
-        <th class="th1" colspan="3"><a href="pages/KhoiNghiep.html">Khởi nghiệp</a></th>
-    </tr>
-    <tr>
-        <th class="th1"><a href="pages/BatDongSan.html">Bất động sản</a></th>
-   
-    </tr>
-</table>
-<button type="button" class="delete-row">Xóa chuyên mục</button>
-
+                  <div id="profile" class="profile-edit tab-pane fade in active">
+                    <div class="headline">
+                      <h2>QUẢN LÝ CHUYÊN MỤC</h2>
                     </div>
+                    <br>
+
+                    <form action="/admin/qlchuyenmuc/them/" method="post">
+                      <label>Thêm chuyên mục: </label>
+                      <input type="text" name="cm" width="100px" placeholder="Chuyên mục lớn ">
+                      <input type="text" name="cm1" width="100px" placeholder="Chuyên mục con 1">
+                      <input type="text" name="cm2" width="100px" placeholder="Chuyên mục con 2">
+                      <button class="btn btn-primary" type="submit">Thêm</button>
+                    </form>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered table-hover" id="datatable" border="1px"
+                        cellspacing="0px" width="100%" style="margin-bottom: 50px">
+                        <tr style="height:  40px; background-color: #7092cc; color: white">
+
+                          <th class="th1">Chuyên mục lớn</th>
+                          <th> Chuyên mục nhỏ 1</th>
+                          <th>Chuyen mục nhỏ 2</th>
+                          <th width="150px" class="th1">Thao tác</th>
+                        </tr>
+                        {{#each chuyenmuc}}
+                        <tr style="height: 30px">
+                          <form method="POST" action="/admin/qlchuyenmuc/xoacm">
+                            <input type="hidden" name="idcm" value="{{idChuyenMuc}}">
+                            <input type="hidden" name="idcm1" value="{{idcm1}}">
+                            <input type="hidden" name="idcm2" value="{{idcm2}}">
+                            <td><input name="cm" height="100%" width="100%" value="{{TenCM}}"> </td>
+                            <td> <input name="cm1" height="100%" width="100%" value="{{cm1}}"></td>
+                            <td><input name="cm2" height="100%" width="100%" value="{{cm2}}"></td>
+                            <td>
+                              <div>
+                                <button formaction="/admin/qlchuyenmuc/suacm/"
+                                  style="margin-left:20px;background:transparent;border:transparent" type="submit"><img
+                                    src="https://img.icons8.com/wired/20/000000/pencil.png"></button>
+                                <button style="margin-left:20px;background:transparent;border:transparent"
+                                  type="submit"><img
+                                    src="https://img.icons8.com/material/20/000000/delete-forever.png"></button>
+                              </div>
+                            </td>
+                          </form>
+                        </tr>
+                        {{/each}}
+                      </table>
+                    </div>
+                  </div>
                 </div>
-                <!--End Profile Body-->
+              </div>
             </div>
-        </div>
-    </div>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        if ($("#frmCoupon").hasClass("has-error")) {
-            var scrollPos = $("#frmCouponContainer").offset().top;
-            $(window).scrollTop(scrollPos - 200);            
-        }
-    });
-    
-</script>
-
-
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="row">
-            <div class="container-kplus padding-right-10">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-
-                </div>
-            </div>
-        </div>
-
-        <!--footer-->
- 
-</div>
-<footer id="footer">
-  <div class="footer_top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="single_footer_top wow fadeInLeft">
-            <h2>Flicker Images</h2>
-            <ul class="flicker_nav">
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-              <li><a href="#"><img src="images/75x75.jpg" alt=""></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="single_footer_top wow fadeInDown">
-            <h2>Labels</h2>
-            <ul class="labels_nav">
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Games</a></li>
-              <li><a href="#">Fashion</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Slider</a></li>
-              <li><a href="#">Life &amp; Style</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <div class="single_footer_top wow fadeInRight">
-            <h2>About Us</h2>
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nec laoreet orci, eget ullamcorper quam. Phasellus lorem neque, </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="footer_bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="footer_bottom_left">
-            <p>Copyright &copy; 2045 <a href="index.html">magExpress</a></p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="footer_bottom_right">
-            <p>Developed BY Wpfreeware</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<div class="modal fade" id="edit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <table  cellspacing="0px" width="100%" padding="2px">
-    <tr>
-      
-    
-        <th class="search_form" rowspan="2"><input type="text" placeholder="Thể thao"></th>
-        <th class="search_form" colspan="3"><input type="text" placeholder="Bóng đá"></th>
-    </tr>
-    <tr>
-        <th class="search_form"><input type="text" placeholder="Bóng chuyền"></th>
-   
-    </tr>
-
-</table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-            <button type="button" class="btn btn-primary">Gửi</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="edit2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <table  cellspacing="0px" width="100%" padding="2px">
-    <tr>
-      
-    
-        <th class="search_form" rowspan="2"><input type="text" placeholder="Tin tức"></th>
-        <th  colspan="3"><input type="text" placeholder="Tin tức Hồ Chí Minh"></th>
-    </tr>
-    <tr>
-        <th class="search_form"><input type="text" placeholder="Tin tức Nghệ An"></th>
-   
-    </tr>
-
-</table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-            <button type="button" class="btn btn-primary">Gửi</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="edit3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <table  cellspacing="0px" width="100%" padding="2px">
-    <tr>
-      
-    
-        <th class="search_form" rowspan="2"><input type="text" placeholder="Ẩm thực"></th>
-        <th class="search_form" colspan="3"><input type="text" placeholder="Ẩm thực Việt Nam"></th>
-    </tr>
-    <tr>
-        <th class="search_form"><input type="text" placeholder="Ẩm thực thế giới"></th>
-   
-    </tr>
-
-</table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-            <button type="button" class="btn btn-primary">Gửi</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="edit4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <table  cellspacing="0px" width="100%" padding="2px">
-    <tr>
-      
-    
-        <th class="search_form" rowspan="2"><input type="text" placeholder="Du lịch"></th>
-        <th class="search_form" colspan="3"><input type="text" placeholder="Du lịch Việt Nam"></th>
-    </tr>
-    <tr>
-        <th class="search_form"><input type="text" placeholder="Du lịch thế giới"></th>
-   
-    </tr>
-
-</table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-            <button type="button" class="btn btn-primary">Gửi</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="edit5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nội dung cần chỉnh sửa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <table  cellspacing="0px" width="100%" padding="2px">
-    <tr>
-      
-    
-        <th class="search_form" rowspan="2"><input  type="text" placeholder="Kinh doanh"></th>
-        <th class="search_form" colspan="3"><input type="text" placeholder=" Khởi nghiệp"></th>
-    </tr>
-    <tr>
-        <th class="search_form"><input type="text" placeholder="Bất động sản"></th>
-   
-    </tr>
-
-</table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-            <button type="button" class="btn btn-primary">Gửi</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $(".add-row").click(function(){
-            var name = $("#name").val();
-         
-            var markup = "<tr ><td class='th1' ><input type='checkbox' name='record'></td><td class='th1' >" + " <button class='glyphicon glyphicon-ok' data-toggle='modal' data-target='#edit1'></button></td><td class='th1' >"  + name  
-            $("table tbody").append(markup);
-        });
-        
-        // Find and remove selected table rows
-        $(".delete-row").click(function(){
-            $("table tbody").find('input[name="record"]').each(function(){
-              if($(this).is(":checked")){
-                    $(this).parents("tr").remove();
-                }
-            });
-        });
-    });    
-</script>
