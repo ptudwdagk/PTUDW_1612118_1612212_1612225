@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       baibaomodel.moinhat().then(moinhatrows=>{
        
         baibaomodel.bvnoibatnhat10huyenmucnoibat().then(bvchuyenmucnoibat_rows=>{
-
+           
           res.render('index.hbs',{
             bonbaibao: rows,
             muoibaibao:rows_10bainoibat,

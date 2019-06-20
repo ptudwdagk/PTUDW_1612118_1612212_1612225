@@ -61,28 +61,23 @@
 
                                                         <div class="modal-content">
                                                             <h2 style="margin-left: 40%;">Chỉnh sửa</h2>
-                                                            <form method="post" action="/profile/approvepost">
 
+                                                            <form method="post" action="/admin/approvepost_update">
+                                                                    <input type="hidden" value="{{infoThanhVien.idThanhVien}}" name="idtv">
                                                                 <div class="form-group">
-                                                                    <label for="pwd" style="margin-left: 20px">Ngày
-                                                                        sinh:</label>
-                                                                    <input type="date"
-                                                                        style=" background: #F5F5DC;color:black;width:30%;margin-left: 60px;padding-left:10px"
-                                                                        id="pwd" placeholder="Enter approve date"
-                                                                        name="publishdate">
+                                                                    <label for="pwd" style="margin-left: 20px">Phan he:</label>
+                                                                      <select  name="tenph" 
+                                                                       style=" background: #F5F5DC;color:black;width:30%;margin-left: 60px;padding-left:10px" >
+                                                                        {{#each dsphanhe}}
+                                                                        <option value="{{idPhanHe}}"
+                                                                           >{{TenPhanHe}}</option>
+                                                                        {{/each}}
+                                                                    </select>
 
 
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for="pwd" style="margin-left: 20px">Họ và
-                                                                        tên:</label>
-                                                                    <input type="text"
-                                                                        style=" background: #F5F5DC;color:black;width:30%;margin-left: 60px;padding-left:10px"
-                                                                        id="pwd" name="name"
-                                                                        placeholder="{{authUser.HoTen}}">
-
-
-                                                                </div>
+                                                               
+                                                              
 
                                                                 <div class="modal-footer">
                                                                     <button type="submit" class="btn btn-primary"
@@ -105,28 +100,36 @@
                                         </div>
                                         <br>
                                         <dl class="dl-horizontal">
-                                            <dt><strong>Email </strong></dt>
+                                            <dt><strong>Email: </strong></dt>
+
                                             <dd>
-                                                <span class="lbl-data">{{authUser.Email}}</span>
+                                                <span class="lbl-data">{{infoThanhVien.Email}}</span>
 
                                             </dd>
 
                                             <hr>
-                                            <dt><strong>Ngày sinh </strong></dt>
+                                            <dt><strong>Ngày sinh: </strong></dt>
                                             <dd>
-                                                <span class="lbl-data">{{authUser.datePublished }}</span>
-
-                                            </dd>
-                                            <dt></dt>
-                                            <hr>
-                                            <dt><strong>Họ và tên</strong></dt>
-                                            <dd>
-                                                <span class="lbl-data">{{authUser.HoTen}}</span>
+                                                <span class="lbl-data">{{infoThanhVien.datePublished}}</span>
 
                                             </dd>
                                             <dt></dt>
                                             <hr>
-                                           
+                                            <dt><strong>Họ và tên: </strong></dt>
+                                            <dd>
+                                                <span class="lbl-data">{{infoThanhVien.HoTen}}</span>
+
+                                            </dd>
+                                            <dt></dt>
+                                            <hr>
+                                            <dt><strong>Phân hệ: </strong></dt>
+                                        
+                                            <dd>
+                                                {{!-- <span class="lbl-data">{{authUser.HoTen}}</span> --}}
+                                                <span class="lbl-data"> {{PhanHe.TenPhanHe}}</span>
+                                                <hr>
+                                            </dd>
+                                          
                                             <dt></dt>
                                         </dl>
                                         <div class="headline">

@@ -17,7 +17,14 @@ var result = {
     },
     chuyenmucid: id => {
         return db.load(`select * from chuyenmuc where NguoiQuanLyCM =${id}`);
-    }
+    },
+    chuyenmucbyid: id => {
+        return db.load(`select * from chuyenmuc where NguoiQuanLyCM = ${id} and LoaiCM <>0 `);
+    },
+    update: entity => {
+        return db.update(`chuyenmuc`, `idChuyenMuc`, entity);
+    },
+
 
 }
 

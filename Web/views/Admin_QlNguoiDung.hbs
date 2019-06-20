@@ -1,0 +1,40 @@
+<div class="col-md-9">
+    <!--Profile Body-->
+    <div class="profile-body margin-bottom-20">
+        <div class="tab-v1">
+            <div id="profile" class="profile-edit tab-pane fade in active" style="margin: 10px 0 10px;">
+                <div class="headline">
+                    <h2>GIA HẠN TÀI KHOẢN</h2>
+                </div>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr style="background-color: #7092cc; color: white">
+                            <th scope="col">#</th>
+                            <th scope="col">Tài Khoản</th>
+                            <th scope="col">Hiệu Lực</th>
+                            <th scope="col">Gia Hạn</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {{#each dsThanhVien}}
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><a href="/admin/{{idThanhVien}}">{{Email}}</a></td>
+                            <td>6 ngày</td>
+                            <td><input type="button" onclick="alert('Tài khoản còn hiệu lực');" value="Gia Hạn"></td>
+
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+        <!--End Profile Body-->
+    </div>
+</div>
+</div>
